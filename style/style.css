@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+}
+
+.first-page {
+    background-image: url(/image/Balloon\ Experience.jpg);
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    top: -14px;
+    z-index: -1;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px 20px 40px;
+    border-radius: 40px;
+    
+}
+
+nav > .logo > a {
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+    font-weight: 300;
+    margin-left: 30px;
+}
+
+nav > .menu > ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    font-weight: 300;
+}
+
+nav > .menu > ul > a {
+    text-decoration: none;
+    color: white;
+}
+
+marquee {
+    width: 100%;
+    background-color: white;
+    padding: 10px 0px 10px 0px;
+    position: absolute;
+    top: 0;
+}
+
+marquee > span {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.see-more-products-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 550px;
+}
+
+.see-more-products-container > p {
+    color: white;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.see-more-products-container > button {
+    height: 60px;
+    width: 60px;
+    font-family: montserrat;
+    font-size: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1.5px solid white;
+    color: white;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.see-more-products-container > button:hover {
+    background-color: white;
+    color: black;
+}
+
+.slide-product-container {
+    width: 100%;
+    display: flex;
+}
