@@ -18,7 +18,7 @@ setInterval(() => {
         product_container.style.transform = "translateX(0)";
         index = 0;
     }
-}, 3000);
+}, 5000);
 /*
 previous_button.addEventListener("click", () => {
     width_product_image = products[0].clientWidth;
