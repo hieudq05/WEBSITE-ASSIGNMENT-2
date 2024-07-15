@@ -25,6 +25,7 @@ body {
     background-image: url(/image/Balloon\ Experience.jpg);
     background-size: cover;
     height: 100vh;
+    width: 100%;
 }
 
 nav {
@@ -61,6 +62,7 @@ nav > .menu > ul > a {
 
 nav > .menu > ul > a:hover {
     transform: scale(1.1);
+    background-color: rgb(255, 255, 255, 0.2);
 }
 
 marquee {
@@ -118,4 +120,76 @@ marquee > span {
     background: url(/image/Balloon\ Experience.jpg);
     background-clip: text;
     color: transparent;
+}
+
+.slide-product-container {
+    height: 450px;
+    overflow: hidden;
+    margin: auto;
+    margin: 150px 90px 0px 90px;
+}
+
+.slide-product-container > .title {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 30%;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+.slide-product-container > .title > h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.slide-product-container > .arrow-container > button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide-product-container > .product-container {
+    display: flex;
+    z-index: -1;
+    transition: all 1.4s cubic-bezier(0.77, 0, 0.175, 1);
+    position: relative;
+    top: -192.59px;
+    width: 100%;
+}
+
+.slide-product-container > .product-container > .product > img {
+    width: calc(100vw - 180px);
+    height: 450px;
+    object-fit: cover;
+    border-radius: 50px;
+    filter: brightness(0.6);
+}
+
+.bussiness-partners-container {
+    width: 100%;
+    height: 130px;
+    margin-top: 150px;
+    background-color: rgb(239, 239, 239);
+    display: flex;
+    align-items: center;
+}
+
+.bussiness-partners-container > .partners {
+    display: flex;
+    height: 100px;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.bussiness-partners-container > .partners > img,
+.bussiness-partners-container > .partners > svg {
+    width: 120px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
 }
