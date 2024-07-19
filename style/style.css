@@ -16,6 +16,10 @@
     font-display: swap;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: "Transforma Mix";
@@ -117,6 +121,16 @@ marquee > span {
     color: black;
 }
 
+.see-more-products-container > button > a {
+    text-decoration: none;
+    color: white;
+}
+
+.see-more-products-container > button:hover a {
+    color: black;
+    transition: all 0.5s ease;
+}
+
 .see-more-products-container > button:hover > p {
     background: url(/image/Balloon\ Experience.jpg);
     background-clip: text;
@@ -130,7 +144,6 @@ marquee > span {
     margin: 150px 90px 0px 90px;
     border-radius: 50px;
     background-color: transparent;
-    box-shadow: inset 5px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .slide-product-container > .title {
@@ -247,11 +260,12 @@ marquee > span {
     object-fit: cover;
     border-radius: 20px;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .list-popular-products-container > .products-container > .product:hover {
     transform: translate(-6px, -9px);
-    box-shadow: 7px 7px 20px rgb(154, 184, 241);
+    box-shadow: 7px 7px 20px rgb(199, 199, 199);
 }
 
 .list-popular-products-container > .products-container > .product > .inf {
@@ -373,4 +387,129 @@ marquee > span {
     padding: 0px 3px 0px 3px;
     border-radius: 10px;
     border: 1px solid black;
+}
+
+footer {
+    background: url(/image/Balloon\ Experience.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 150vw;
+    color: white;
+    border-radius: 40px;
+    margin: 170px 20px 20px 20px;
+}
+
+footer > .container {
+    display: flex;
+    flex-direction: column;
+}
+
+footer > .container > .top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+footer > .container > .bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer > .container > .top > .right {
+    width: 600px;
+    height: 100%;
+    padding: 50px 70px 0px 0px;
+}
+
+footer > .container > .top > .left {
+    width: 600px;
+    height: 100%;
+    padding: 50px 0px 0px 70px;
+}
+
+footer > .container > .top > .left > .contact-us > .title {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+footer > .container > .top > .left > .contact-us > .email {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 30px;
+    border: 1px solid white;
+    padding: 6px 0px 4px 20px;
+    border-radius: 20px;
+}
+
+footer > .container > .top > .left > .contact-us > .email > a{
+    text-decoration: none;
+    color: white;
+}
+
+footer > .container > .top > .left > .contact-us > .email > a:hover{
+    text-decoration: underline;
+}
+
+footer > .container > .top > .left > .call-us > .title {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+footer > .container > .top > .left > .call-us > .number {
+    font-size: 28px;
+    font-weight: 700;
+    border: 1px solid white;
+    padding: 6px 0px 4px 20px;
+    border-radius: 20px;
+}
+
+footer > .container > .top > .left > .call-us > .number > a {
+    text-decoration: none;
+    color: white;
+}
+
+footer > .container > .top > .left > .call-us > .number > a:hover {
+    text-decoration: underline;
+}
+
+footer > .container > .top > .right > .follow-me > .title {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+footer > .container > .top > .right > .follow-me > .logo {
+    display: flex;
+    gap: 30px;
+}
+
+footer > .container > .top > .right > .follow-me > .logo > a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid transparent;
+}
+
+footer > .container > .top > .right > .follow-me > .logo > a > img {
+    width: 30px;
+}
+
+footer > .container > .top > .right > .follow-me > .logo > a:hover {
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+footer> .container > .bottom > .logo{
+    font-size: 32px;
+    font-weight: 700;
+    width: 600px;
+    padding: 0px 0px 50px 70px;
+}
+
+footer> .container > .bottom > .shop{
+    width: 600px;
+    padding: 0px 70px 0px 0px;
+    font-size: 32px;
+    font-weight: 700;
 }
