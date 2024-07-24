@@ -119,16 +119,7 @@ marquee > span {
 .see-more-products-container > button:hover {
     background-color: white;
     color: black;
-}
-
-.see-more-products-container > button > a {
-    text-decoration: none;
-    color: white;
-}
-
-.see-more-products-container > button:hover a {
-    color: black;
-    transition: all 0.5s ease;
+    transform: translateX();
 }
 
 .see-more-products-container > button:hover > p {
@@ -138,7 +129,7 @@ marquee > span {
 }
 
 .slide-product-container {
-    height: 450px;
+    height: 550px;
     overflow: hidden;
     margin: auto;
     margin: 150px 90px 0px 90px;
@@ -146,38 +137,40 @@ marquee > span {
     background-color: transparent;
 }
 
-.slide-product-container > .title {
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-    top: 30%;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    text-align: center;
-}
-
-.slide-product-container > .title > h1 {
-    font-size: 40px;
-    text-transform: uppercase;
-}
-
 .slide-product-container > .product-container {
     display: flex;
     z-index: -1;
-    transition: all 2s cubic-bezier(0.77, 0, 0.175, 1);
+    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
     position: relative;
-    top: -190.59px;
     width: calc(100vw - 180px);
 }
 
 .slide-product-container > .product-container > .product > img {
     width: calc(100vw - 197px);
-    height: 450px;
+    height: 550px;
     object-fit: cover;
     border-radius: 50px;
-    filter: brightness(0.6);
     z-index: 1;
+}
+
+.control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.control > button {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(236, 236, 236);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .bussiness-partners-container {
@@ -191,7 +184,7 @@ marquee > span {
 
 .bussiness-partners-container > .partners {
     display: flex;
-    height: 100px;
+    height: 150px;
     width: 100%;
     flex-wrap: wrap;
     gap: 20px;
@@ -204,7 +197,9 @@ marquee > span {
     aspect-ratio: 3/2;
     object-fit: contain;
     background-color: white;
-    padding: 0px 20px 0px 20px;
+    padding: 0px 50px 0px 50px;
+    border: 2px solid rgb(209, 209, 209);
+    border-radius: 20px;
 }
 
 .bussiness-partners-container > .line {
@@ -225,13 +220,24 @@ marquee > span {
 .list-popular-products-container > .title {
     text-align: center;
     text-transform: uppercase;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 600;
     color: white;
-    margin-bottom: 50px;
-    background: url(/image/Balloon\ Experience.jpg);
-    background-clip: text;
-    color: transparent;
+    margin-bottom: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-popular-products-container > .title > div {
+    border: 2px solid rgb(218, 218, 218);
+    padding: 20px 50px 10px 50px;
+    box-sizing: content-box;
+    background-color: white;
+    border-radius: 20px;
+    background-image: url(/image/Balloon\ Experience.jpg);
+    width: 100%;
 }
 
 .list-popular-products-container > .products-container {
@@ -272,6 +278,41 @@ marquee > span {
     flex: 1;
     width: 300px;
     padding-left: 20px;
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > .container-price {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > .container-price
+    > .price {
+    text-decoration: line-through;
+    font-size: 13px;
+    font-family: montserrat;
+    color: gray;
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > .container-price
+    > .sale {
+    font-weight: 600;
+    color: rgb(33, 80, 138);
+    font-size: 16px;
+    margin: 5px 0px 8px 0px;
+    font-family: montserrat;
 }
 
 .list-popular-products-container
@@ -378,22 +419,10 @@ marquee > span {
     border: 1px solid rgb(188, 188, 188);
 }
 
-.list-popular-products-container
-    > .products-container
-    > .product
-    > .inf
-    > .size
-    > div:target {
-    padding: 0px 3px 0px 3px;
-    border-radius: 10px;
-    border: 1px solid black;
-}
-
 footer {
     background: url(/image/Balloon\ Experience.jpg);
-    background-position: top;
+    background-position: bottom;
     background-repeat: no-repeat;
-    background-size: 150vw;
     color: white;
     border-radius: 40px;
     margin: 170px 20px 20px 20px;
@@ -408,59 +437,70 @@ footer > .container > .top {
     display: flex;
     justify-content: space-between;
     margin-bottom: 30px;
+    gap: 100px;
 }
 
 footer > .container > .bottom {
     display: flex;
     justify-content: space-between;
+    gap: 100px;
 }
 
 footer > .container > .top > .right {
     width: 600px;
+    flex: 2;
     height: 100%;
     padding: 50px 70px 0px 0px;
 }
 
 footer > .container > .top > .left {
     width: 600px;
+    flex: 1;
     height: 100%;
     padding: 50px 0px 0px 70px;
 }
 
 footer > .container > .top > .left > .contact-us > .title {
     text-transform: uppercase;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 footer > .container > .top > .left > .contact-us > .email {
     font-weight: 700;
-    font-size: 28px;
-    margin-bottom: 30px;
+    font-size: 20px;
+    margin-bottom: 40px;
     border: 1px solid white;
-    padding: 6px 0px 4px 20px;
+    padding: 10px 0px 10px 20px;
     border-radius: 20px;
+    font-family: montserrat;
+    letter-spacing: 1px;
 }
 
-footer > .container > .top > .left > .contact-us > .email > a{
+footer > .container > .top > .left > .contact-us > .email > a {
     text-decoration: none;
     color: white;
 }
 
-footer > .container > .top > .left > .contact-us > .email > a:hover{
+footer > .container > .top > .left > .contact-us > .email > a:hover {
     text-decoration: underline;
 }
 
 footer > .container > .top > .left > .call-us > .title {
     text-transform: uppercase;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 footer > .container > .top > .left > .call-us > .number {
-    font-size: 28px;
+    font-size: 20px;
     font-weight: 700;
     border: 1px solid white;
-    padding: 6px 0px 4px 20px;
+    padding: 10px 0px 10px 30px;
     border-radius: 20px;
+    font-family: montserrat;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 footer > .container > .top > .left > .call-us > .number > a {
@@ -474,42 +514,39 @@ footer > .container > .top > .left > .call-us > .number > a:hover {
 
 footer > .container > .top > .right > .follow-me > .title {
     text-transform: uppercase;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 footer > .container > .top > .right > .follow-me > .logo {
     display: flex;
-    gap: 30px;
+    gap: 50px;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 7px 0px 7px 30px;
 }
 
-footer > .container > .top > .right > .follow-me > .logo > a{
+footer > .container > .top > .right > .follow-me > .logo > a {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    border: 1px solid transparent;
 }
 
 footer > .container > .top > .right > .follow-me > .logo > a > img {
     width: 30px;
 }
 
-footer > .container > .top > .right > .follow-me > .logo > a:hover {
-    border: 1px solid white;
-    border-radius: 20px;
-    padding: 10px;
-}
-
-footer> .container > .bottom > .logo{
+footer > .container > .bottom > .logo {
     font-size: 32px;
     font-weight: 700;
     width: 600px;
     padding: 0px 0px 50px 70px;
+    flex: 1;
 }
 
-footer> .container > .bottom > .shop{
+footer > .container > .bottom > .shop {
     width: 600px;
     padding: 0px 70px 0px 0px;
     font-size: 32px;
     font-weight: 700;
+    flex: 2;
 }
