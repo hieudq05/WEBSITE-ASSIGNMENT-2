@@ -171,6 +171,15 @@ for (let index = 0; index < product.length; index++) {
         size.appendChild(child_Size);
     }
     inf.appendChild(size);
+    let buy = document.createElement("button");
+    buy.innerHTML = "Buy";
+    inf.appendChild(buy);
+
+    let cart = document.createElement("button");
+    let icon_Cart = document.createElement("img");
+    icon_Cart.setAttribute("src", "/image/shopping_cart_2_line.png");
+    cart.innerHTML= "Add to cart";
+    inf.appendChild(cart);
 
     let productNode = document.createElement("div");
     productNode.classList.add("product");

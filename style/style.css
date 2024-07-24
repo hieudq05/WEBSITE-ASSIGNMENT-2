@@ -237,6 +237,8 @@ marquee > span {
     background-color: white;
     border-radius: 20px;
     background-image: url(/image/Balloon\ Experience.jpg);
+    background-position: bottom;
+    background-size: cover;
     width: 100%;
 }
 
@@ -250,7 +252,7 @@ marquee > span {
 .list-popular-products-container > .products-container > .product {
     border: 2px solid rgb(232, 232, 232);
     width: 350px;
-    height: 550px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     border-radius: 34px;
@@ -260,7 +262,7 @@ marquee > span {
 }
 
 .list-popular-products-container > .products-container > .product > img {
-    flex: 3;
+    flex: 7;
     height: 350px;
     width: 320px;
     object-fit: cover;
@@ -275,7 +277,7 @@ marquee > span {
 }
 
 .list-popular-products-container > .products-container > .product > .inf {
-    flex: 1;
+    flex: 3;
     width: 300px;
     padding-left: 20px;
 }
@@ -343,7 +345,6 @@ marquee > span {
     display: flex;
     gap: 23px;
     margin-bottom: 5px;
-    margin-left: 3px;
 }
 
 .list-popular-products-container
@@ -390,7 +391,9 @@ marquee > span {
     > .inf
     > .size {
     display: flex;
-    gap: 12px;
+    gap: 13px;
+    position: relative;
+    left: -6px;
 }
 
 .list-popular-products-container
@@ -417,6 +420,23 @@ marquee > span {
     padding: 0px 3px 0px 3px;
     border-radius: 10px;
     border: 1px solid rgb(188, 188, 188);
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > button {
+    margin-top: 5px;
+    margin-right: 10px;
+    height: 30px;
+    background: rgb(228, 228, 228);
+    border: none;
+    border-radius: 7px;
+    font-family: Transforma Mix;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0px 10px 0px 10px;
 }
 
 footer {
