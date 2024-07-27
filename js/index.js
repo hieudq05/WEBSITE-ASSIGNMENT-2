@@ -6,16 +6,14 @@ const product_container = document.querySelector(".product-container");
 var width_product_image;
 var index = 0;
 
-console.log(previous_button);
-
 previous_button.addEventListener("click", () => {
     width_product_image = products[0].clientWidth;
     if (index > 0) {
         index--;
-        let value_translate = index*width_product_image;
+        let value_translate = index * width_product_image;
         product_container.style.transform = `translateX(-${value_translate}px)`;
     } else {
-        index=products.length-1;
+        index = products.length - 1;
         let value_translate = index * width_product_image;
         product_container.style.transform = `translateX(-${value_translate}px)`;
     }
@@ -23,7 +21,7 @@ previous_button.addEventListener("click", () => {
 
 next_button.addEventListener("click", () => {
     width_product_image = products[0].clientWidth;
-    if (index < products.length-1) {
+    if (index < products.length - 1) {
         index++;
         let value_translate = index * width_product_image;
         product_container.style.transform = `translateX(-${value_translate}px)`;
@@ -172,14 +170,8 @@ for (let index = 0; index < product.length; index++) {
     }
     inf.appendChild(size);
     let buy = document.createElement("button");
-    buy.innerHTML = "Buy";
+    buy.innerHTML = "Explore";
     inf.appendChild(buy);
-
-    let cart = document.createElement("button");
-    let icon_Cart = document.createElement("img");
-    icon_Cart.setAttribute("src", "/image/shopping_cart_2_line.png");
-    cart.innerHTML= "Add to cart";
-    inf.appendChild(cart);
 
     let productNode = document.createElement("div");
     productNode.classList.add("product");
@@ -187,3 +179,29 @@ for (let index = 0; index < product.length; index++) {
     productNode.appendChild(inf);
     container_Product[0].appendChild(productNode);
 }
+
+const btnExplore = document.querySelectorAll(
+    ".list-popular-products-container .products-container .product .inf button"
+);
+btnExplore.forEach((element) => {
+    let icon = document.createElement("img");
+    icon.src = "/image/arrow_right_up_line.png";
+    icon.style.height = "2cap";
+    icon.style.opacity = "0";
+    icon.style.transition =
+        "opacity 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
+    icon.style.transitionDelay =
+        "0.2s";
+    element.appendChild(icon);
+    element.style.display = "flex";
+    element.style.alignItems = "center";
+    element.style.gap = "5px";
+    element.addEventListener("mouseover", () => {
+        element.style.width = "100px";
+        icon.style.opacity = "1";
+    });
+    element.addEventListener("mouseout", () => {
+        element.style.width = "76px";
+        icon.style.opacity = "0";
+    });
+});

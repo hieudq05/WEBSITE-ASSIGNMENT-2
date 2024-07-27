@@ -402,7 +402,6 @@ marquee > span {
     > .inf
     > .size
     > div {
-    cursor: pointer;
     width: 25px;
     padding: 0px 3px 0px 3px;
     border: 1px solid white;
@@ -415,20 +414,8 @@ marquee > span {
     > .products-container
     > .product
     > .inf
-    > .size
-    > div:hover {
-    padding: 0px 3px 0px 3px;
-    border-radius: 10px;
-    border: 1px solid rgb(188, 188, 188);
-}
-
-.list-popular-products-container
-    > .products-container
-    > .product
-    > .inf
     > button {
     margin-top: 5px;
-    margin-right: 10px;
     height: 30px;
     background: rgb(228, 228, 228);
     border: none;
@@ -437,6 +424,9 @@ marquee > span {
     font-weight: 700;
     cursor: pointer;
     padding: 0px 10px 0px 10px;
+    width: 76px;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 footer {
