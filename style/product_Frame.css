@@ -5,30 +5,30 @@
     transform: translate(-50%, -50%);
     height: 80vh;
     width: 70vw;
-    background-color: rgb(238, 238, 238);
+    background-color: white;
     display: flex;
     padding: 40px;
     box-sizing: border-box;
     border-radius: 30px;
     gap: 40px;
     display: none;
-    box-shadow: 0px 0px 70px black;
-    transition: all 0.3s ease;
+    box-shadow: 7px 7px 20px rgb(199, 199, 199);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.exit{
+.exit {
     position: absolute;
     right: 30px;
     top: 30px;
     border-radius: 50%;
     height: 25px;
     width: 25px;
-    background-color: rgb(38, 113, 252);
+    background-color: rgb(0, 0, 0);
     border: none;
     color: white;
-    font-family: montserrat;
     font-weight: 700;
     cursor: pointer;
+    font-family: montserrat;
 }
 
 .product-frame > .product-image {
@@ -45,12 +45,12 @@
 .product-frame > .product-inf {
     flex: 3;
     padding: 20px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif;
 }
 
 .product-frame > .product-inf > .name {
     font-size: 35px;
-    color: rgb(5, 32, 155);
+    font-weight: 600;
 }
 
 .product-frame > .product-inf > .flash-sale {
@@ -59,9 +59,11 @@
     align-items: center;
     padding: 0px 20px;
     margin-top: 30px;
-    background-color: rgb(88, 140, 253);
+    background-image: url(/image/Balloon\ Experience.jpg);
+    background-position: center;
     height: 45px;
     border-radius: 8px 8px 0px 0px;
+    color: white;
 }
 
 .product-frame > .product-inf > .flash-sale > .title {
@@ -81,12 +83,16 @@
 }
 
 .product-frame > .product-inf > .flash-sale > .time > .time-countdown > div {
-    background-color: black;
-    color: white;
-    padding: 7px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    width: 30px;
+    height: 30px;
     border-radius: 5px;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .product-frame > .product-inf > .price {
@@ -94,19 +100,20 @@
     gap: 20px;
     padding: 15px 0 15px 20px;
     align-items: center;
-    background-color: rgb(216, 225, 243);
+    background-color: rgb(242, 247, 255);
     border-radius: 0 0 8px 8px;
 }
 
 .product-frame > .product-inf > .price > .price-curent {
     font-size: 13px;
-    color: gray;
+    color: rgb(153, 153, 153);
     text-decoration: line-through;
 }
 
 .product-frame > .product-inf > .price > .sale {
     font-size: 27px;
-    color: rgb(8, 43, 201);
+    color: rgb(0, 0, 0);
+    font-weight: 500;
 }
 
 .product-frame > .product-inf > .label-size {
@@ -120,23 +127,22 @@
 }
 
 .product-frame > .product-inf > .size > button {
-    border: 1px solid rgb(158, 158, 158);
+    border: 2px solid rgb(224, 224, 224);
     padding: 7px 20px;
     border-radius: 10px;
     font-size: 15px;
     cursor: pointer;
     transition: all 0.2s ease;
+    background-color: transparent;
 }
 
 .product-frame > .product-inf > .size > button:hover {
-    border: 1px solid rgb(38, 93, 211);
-    color: rgb(38, 93, 211);
+    border: 2px solid rgb(0, 0, 0);
 }
 
 .button-size-active {
-    box-shadow: inset 0px -3px 0px 0px rgb(38, 93, 211);
-    color: rgb(38, 93, 211);
-    border: 1px solid rgb(38, 93, 211) !important;
+    box-shadow: inset 0px -3px 0px 0px black;
+    border: 2px solid black !important;
 }
 
 .product-frame > .product-inf > .label-color {
@@ -165,9 +171,8 @@
     height: 25px;
     border-radius: 50%;
     border: none;
-    background-color: rgba(121, 214, 34, 0.973);
     cursor: pointer;
-    transition: all 0.2s ease;
+    box-shadow: 0px 0px 3px;
 }
 
 .product-frame > .product-inf > .color > button:hover {
@@ -175,7 +180,7 @@
 }
 
 .button-color-active {
-    border: 2px solid rgb(38, 93, 211) !important;
+    border: 2px solid black !important;
 }
 
 .product-frame > .product-inf > .label-count {
@@ -188,29 +193,39 @@
 }
 
 .product-frame > .product-inf > .count > button:nth-child(1) {
-    height: 36px;
+    height: 38px;
     width: 30px;
-    border: 1px solid rgb(180, 180, 180);
+    border: 2px solid rgb(224, 224, 224);
     cursor: pointer;
     font-size: 25px;
     font-family: montserrat;
     color: gray;
     border-radius: 10px 0 0 10px;
+    background-color: transparent;
+}
+
+.product-frame > .product-inf > .count > button:nth-child(1):active{
+    background-color: rgb(238, 238, 238);
 }
 
 .product-frame > .product-inf > .count > button:nth-child(3) {
-    height: 36px;
+    height: 38px;
     width: 30px;
-    border: 1px solid rgb(180, 180, 180);
+    border: 2px solid rgb(224, 224, 224);
     cursor: pointer;
     font-size: 25px;
     font-family: montserrat;
     color: gray;
     border-radius: 0 10px 10px 0px;
+    background-color: transparent;
+}
+
+.product-frame > .product-inf > .count > button:nth-child(3):active{
+    background-color: rgb(238, 238, 238);
 }
 
 .product-frame > .product-inf > .count > input {
-    border: 1px solid rgb(180, 180, 180);
+    border: 2px solid rgb(224, 224, 224);
     border-left: none;
     border-right: none;
     height: 32px;
@@ -228,10 +243,10 @@
 }
 
 .product-frame > .product-inf > .add > button:nth-child(2) {
-    height: 50px;
+    height: 40px;
     padding: 0 20px;
     border: none;
-    background-color: rgb(25, 99, 238);
+    background-color: black;
     border-radius: 10px;
     font-size: 15px;
     font-weight: 00;
@@ -240,13 +255,14 @@
 }
 
 .product-frame > .product-inf > .add > button:nth-child(1) {
-    height: 50px;
+    height: 40px;
     padding: 0 20px;
-    border: 2px solid rgb(38, 93, 211);
-    background-color: rgb(217, 232, 252);
+    border: 2px solid black;
+    background-color: rgb(245, 245, 245);
     border-radius: 10px;
     font-size: 15px;
     cursor: pointer;
+    color: rgb(0, 0, 0);
 }
 
 .product-frame

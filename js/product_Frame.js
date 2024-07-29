@@ -1,45 +1,43 @@
-const size = document.querySelectorAll(".product-inf .size button");
-size.forEach((element) => {
-    element.addEventListener("click", () => {
-        size.forEach((element1) => {
-            if (
-                element1.classList.toggle("button-size-active") === true &&
-                element1 != element
-            ) {
-                element1.classList.toggle("button-size-active");
-            }
-        });
+function chooseSize(btnSize) {
+    btnSize.parentNode.childNodes.forEach((element) => {
+        if (
+            element.classList.toggle("button-size-active") === true &&
+            element != btnSize
+        ) {
+            element.classList.toggle("button-size-active");
+        }
     });
-});
+}
 
-const color = document.querySelectorAll(".product-inf .color div");
-color.forEach((element) => {
-    element.addEventListener("click", () => {
-        color.forEach((element1) => {
-            if (
-                element1.classList.toggle("button-color-active") === true &&
-                element1 != element
-            ) {
-                element1.classList.toggle("button-color-active");
-            }
-        });
+function chooseColor(btnColor) {
+    btnColor.parentNode.parentNode.childNodes.forEach((element) => {
+        if (
+            element.classList.toggle("button-color-active") === true &&
+            element != btnColor.parentNode
+        ) {
+            element.classList.toggle("button-color-active");
+        }
     });
-});
+}
 
-/*
-const up = document.querySelectorAll(".product-inf .count button")[1];
-const down = document.querySelectorAll(".product-inf .count button")[0];
-const product_count = document.querySelector(".product-inf .count input");
-up.addEventListener("click", () => {
-    product_count.value++;
-});
-down.addEventListener("click", () => {
-    if (product_count.value > 1) {
-        product_count.value--;
+function up(btnUp) {
+    btnUp.parentNode.childNodes[1].value++;
+}
+
+function down(btnDown) {
+    if (btnDown.parentNode.childNodes[1].value > 1) {
+        btnDown.parentNode.childNodes[1].value--;
     }
-});*/
+}
+
+function exit(btnExit) {
+    btnExit.parentNode.remove();
+    document.getElementsByClassName("main-page")[0].classList.remove("disable");
+}
 
 var getMoreInf = (el) => {
+    let mainPage = document.getElementsByClassName("main-page")[0];
+    mainPage.classList.add("disable");
     let containerX = document.getElementsByClassName("products-container")[0];
     for (let index = 0; index < containerX.childNodes.length; index++) {
         if (containerX.childNodes[index] === el.parentNode.parentNode) {
@@ -52,6 +50,7 @@ var getMoreInf = (el) => {
             //Khởi tạo nút exit & thêm vào khung
             let btnExit = document.createElement("button");
             btnExit.innerHTML = "X";
+            btnExit.setAttribute("onclick", "exit(this)");
             btnExit.classList.add("exit");
             productFrame.appendChild(btnExit);
             //Khởi tạo div chứa element Ảnh & thêm vào khung
@@ -123,16 +122,81 @@ var getMoreInf = (el) => {
                 price.classList.add("price");
                 price.style.borderRadius = "8px";
                 price.style.marginTop = "35px";
-                price.style.backgroundColor = "rgb(227, 227, 230)";
+                price.style.backgroundColor = "rgb(247, 247, 247)";
                 productInf.appendChild(price);
                 let priceCurent = document.createElement("div");
                 priceCurent.innerHTML = product[index].price;
                 priceCurent.style.color = "black";
                 priceCurent.style.textDecoration = "none";
-                priceCurent.style.fontSize = "20px";
+                priceCurent.style.fontSize = "25px";
                 priceCurent.classList.add("price-curent");
                 price.appendChild(priceCurent);
             }
+            let labelSize = document.createElement("div");
+            labelSize.innerHTML = "Kích thước";
+            labelSize.classList.add("label-size");
+            productInf.appendChild(labelSize);
+            let size = document.createElement("div");
+            size.classList.add("size");
+            productInf.appendChild(size);
+            for (
+                let index_Size = 0;
+                index_Size < product[index].size.length;
+                index_Size++
+            ) {
+                let sizeChild = document.createElement("button");
+                sizeChild.innerHTML = product[index].size[index_Size];
+                sizeChild.setAttribute("onclick", "chooseSize(this)");
+                size.appendChild(sizeChild);
+            }
+            let labelColor = document.createElement("div");
+            labelColor.innerHTML = "Màu sắc";
+            labelColor.classList.add("label-color");
+            productInf.appendChild(labelColor);
+            let color = document.createElement("div");
+            color.classList.add("color");
+            productInf.appendChild(color);
+            for (
+                let index_Color = 0;
+                index_Color < product[index].color.length;
+                index_Color++
+            ) {
+                let colorChild = document.createElement("div");
+                color.appendChild(colorChild);
+                let buttonColor = document.createElement("button");
+                buttonColor.style.backgroundColor =
+                    product[index].color[index_Color];
+                buttonColor.setAttribute("onclick", "chooseColor(this)");
+                colorChild.appendChild(buttonColor);
+            }
+            let labelSoluong = document.createElement("div");
+            labelSoluong.innerHTML = "Số lượng";
+            labelSoluong.classList.add("label-count");
+            productInf.appendChild(labelSoluong);
+            let soLuong = document.createElement("div");
+            soLuong.classList.add("count");
+            productInf.appendChild(soLuong);
+            let btnDown = document.createElement("button");
+            btnDown.innerHTML = "-";
+            btnDown.setAttribute("onclick", "down(this)");
+            soLuong.appendChild(btnDown);
+            let inputSoLuong = document.createElement("input");
+            inputSoLuong.setAttribute("type", "number");
+            inputSoLuong.setAttribute("value", "1");
+            soLuong.appendChild(inputSoLuong);
+            let btnUp = document.createElement("button");
+            btnUp.innerHTML = "+";
+            btnUp.setAttribute("onclick", "up(this)");
+            soLuong.appendChild(btnUp);
+            let control = document.createElement("div");
+            control.classList.add("add");
+            productInf.appendChild(control);
+            let btnAddCart = document.createElement("button");
+            btnAddCart.innerHTML = "Thêm vào giỏ hàng";
+            control.appendChild(btnAddCart);
+            let btnBuyNow = document.createElement("button");
+            btnBuyNow.innerHTML = "Mua ngay";
+            control.appendChild(btnBuyNow);
         }
     }
 };
@@ -143,9 +207,10 @@ button_explore.forEach((element) => {
     element.addEventListener("click", () => {
         getMoreInf(element);
     });
+    element.parentNode.parentNode.childNodes[0].addEventListener(
+        "click",
+        () => {
+            getMoreInf(element);
+        }
+    );
 });
-/*
-const button_exit = document.getElementsByClassName("exit")[0];
-button_exit.addEventListener("click", () => {
-    frame.style.display = "none";
-});*/

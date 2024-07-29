@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Đăng nhập | Bwas</title>
+        <link rel="stylesheet" href="/style/signup.css" />
+    </head>
+    <body>
+        <a href="index.html" id="home"><img src="/image/left.png" alt="" /></a>
+        <!--Tạo form đăng ký bằng thẻ form-->
+        <form action="">
+            <div class="status">Hãy đăng ký để không bỏ lỡ👍</div>
+            <!--Container chứa form! Dùng để căn chỉnh thành phần-->
+            <div class="form_login">
+                <label for="txtUsername" id="label_email">Email*</label>
+                <input type="email" name="username" id="txtUsername" required />
+                <label for="txtPassword" id="label_password">Mật khẩu*</label>
+                <div class="password_area">
+                    <input
+                        type="password"
+                        name="password"
+                        id="txtPassword"
+                        required
+                    />
+                    <span><img src="/image/show.png" id="showPassword" /></span>
+                </div>
+
+                <label for="txtReEnterPassword" id="label_reenter_password"
+                    >Nhập lại mật khẩu*</label
+                >
+                <div class="password_area">
+                    <input
+                        type="password"
+                        name="password"
+                        id="txtReEnterPassword"
+                        required
+                    />
+                    <span><img src="/image/show.png" id="showPassword" /></span>
+                </div>
+
+                <p>
+                    Bạn đã có tài khoản?
+                    <a href="./login.html" id="login">Đăng nhập</a>
+                </p>
+                <input type="submit" value="Tiếp tục" id="signup" />
+                <div id="privacyPolicy">
+                    Bằng cách tiếp tục, tôi đồng ý với
+                    <span
+                        style="
+                            font-weight: 600;
+                            color: black;
+                            text-decoration: underline;
+                        "
+                        >Chính sách quyền riêng tư</span
+                    >
+                    và
+                    <span
+                        style="
+                            font-weight: 600;
+                            color: black;
+                            text-decoration: underline;
+                        "
+                        >Điều khoản sử dụng của Bwas.</span
+                    >
+                </div>
+            </div>
+        </form>
+    </body>
+    <script src="/js/signup.js"></script>
+</html>

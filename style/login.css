@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: white;
+    width: 35vw;
+}
+
+form > .status {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 26px;
+}
+
+form > .form_login {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+form > .form_login > .password_area {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+form > .form_login > #label_email {
+    position: relative;
+    top: 45px;
+    left: 20px;
+    background-color: white;
+    width: 50px;
+    padding: 0 0 0 5px;
+    color: gray;
+    transition: all 0.3s ease;
+    cursor: text;
+    font-size: 16px;
+}
+
+form > .form_login > input[type="email"],
+form > .form_login > .password_area > input[type="password"],
+form > .form_login > .password_area > input[type="text"] {
+    height: 50px;
+    margin-top: 10px;
+    border: 1px solid rgb(161, 161, 161);
+    border-radius: 7px;
+    box-sizing: border-box;
+    padding: 0 0 0 25px;
+    font-size: 17px;
+    width: 100%;
+}
+
+form > .form_login > .password_area > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12px;
+}
+
+#showPassword {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    position: absolute;
+    margin-right: 60px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+form > .form_login > #label_password {
+    position: relative;
+    top: 45px;
+    left: 20px;
+    background-color: white;
+    width: 80px;
+    padding: 0 0 0 5px;
+    color: gray;
+    transition: all 0.3s ease;
+    cursor: text;
+}
+
+form > .form_login > p > #signup {
+    color: black;
+    font-weight: 600;
+}
+
+form > .form_login > #login {
+    margin-top: 20px;
+    height: 50px;
+    border-radius: 20px;
+    font-size: 17px;
+    font-weight: 600;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    animation: 2s holderSubmit ease infinite;
+}
+
+@keyframes holderSubmit {
+    0%,
+    100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+#home {
+    position: absolute;
+    left: 90px;
+    transition: all 0.3s ease;
+}
+
+#home:hover {
+    transform: translateX(-20px);
+}
+
+#privacyPolicy {
+    margin-top: 25px;
+    font-size: 14px;
+    color: gray;
+}

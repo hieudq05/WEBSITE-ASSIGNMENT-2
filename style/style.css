@@ -1,19 +1,5 @@
-@font-face {
-    font-family: "Transforma Mix";
-    src: url("/font/TransformaMix_Trial-ExtraLight.woff") format("woff"),
-        url(/font/TransformaMix_Trial-ExtraLight.woff2) format("woff2");
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Transforma Mix";
-    src: url("/font/TransformaMix_Trial-SemiBold.woff") format("woff"),
-        url("/font/TransformaMix_Trial-SemiBold.woff2") format("woff2");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+html{
+    scroll-behavior: smooth;
 }
 
 html {
@@ -22,7 +8,7 @@ html {
 
 body {
     margin: 0;
-    font-family: "Transforma Mix";
+    font-family: sans-serif;
 }
 
 .first-page {
@@ -60,7 +46,7 @@ nav > .menu > ul > a {
     text-decoration: none;
     color: white;
     border: 1px solid white;
-    padding: 7px 25px 7px 25px;
+    padding: 10px 25px 10px 25px;
     border-radius: 20px;
     transition: all 0.3s ease;
 }
@@ -74,7 +60,8 @@ marquee {
     width: 100%;
     background-color: white;
     padding: 10px 0px 10px 0px;
-    position: absolute;
+    position: fixed;
+    z-index: 100;
 }
 
 marquee > span {
@@ -83,6 +70,7 @@ marquee > span {
     background: url(/image/Balloon\ Experience.jpg);
     background-clip: text;
     color: transparent;
+    font-family: sans-serif;
 }
 
 .see-more-products-container {
@@ -128,11 +116,32 @@ marquee > span {
     color: transparent;
 }
 
+.title-slide-product {
+    margin: 100px 90px 0px 90px;
+    font-size: 40px;
+    font-weight: 700;
+    background-image: url(/image/BackGround-Title-Slide.png);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.title-slide-product > img {
+    height: 1cap;
+    position: relative;
+    top: -5px;
+}
+
 .slide-product-container {
     height: 550px;
     overflow: hidden;
     margin: auto;
-    margin: 150px 90px 0px 90px;
+    margin: 20px 90px 0px 90px;
     border-radius: 50px;
     background-color: transparent;
 }
@@ -140,13 +149,14 @@ marquee > span {
 .slide-product-container > .product-container {
     display: flex;
     z-index: -1;
-    transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1);
     position: relative;
     width: calc(100vw - 180px);
+    transition: all 0.3s ease;
+    gap: 20px;
 }
 
 .slide-product-container > .product-container > .product > img {
-    width: calc(100vw - 197px);
+    width: calc((100vw - 180px) / 3 - 20px);
     height: 550px;
     object-fit: cover;
     border-radius: 50px;
@@ -164,7 +174,6 @@ marquee > span {
 .control > button {
     height: 50px;
     width: 50px;
-    background-color: rgb(236, 236, 236);
     border: none;
     border-radius: 50%;
     cursor: pointer;
@@ -173,10 +182,32 @@ marquee > span {
     align-items: center;
 }
 
+.control > button > div {
+    font-weight: 900;
+    font-size: 28px;
+    font-family: monospace;
+    background-image: url(/image/BackGround-Title-Slide.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-bottom: 3px;
+}
+
+.control > button:active {
+    background-color: rgb(253, 240, 232);
+}
+
+.control > button:nth-child(3) > div {
+    margin-left: 3px;
+}
+
 .bussiness-partners-container {
-    width: 100%;
+    width: calc(100vw - 180px);
+    position: relative;
+    top: 100px;
+    margin: auto;
     height: 130px;
-    margin-top: 150px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -191,8 +222,7 @@ marquee > span {
     justify-content: space-around;
 }
 
-.bussiness-partners-container > .partners > img,
-.bussiness-partners-container > .partners > svg {
+.bussiness-partners-container > .partners > img {
     width: 120px;
     aspect-ratio: 3/2;
     object-fit: contain;
@@ -334,7 +364,7 @@ marquee > span {
     font-size: 16px;
     font-family: montserrat;
     font-weight: 300;
-    margin: 5px 0px 8px 0px;
+    margin: 5px 0px 5px 0px;
 }
 
 .list-popular-products-container
@@ -344,7 +374,7 @@ marquee > span {
     > .color {
     display: flex;
     gap: 23px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .list-popular-products-container
@@ -415,18 +445,18 @@ marquee > span {
     > .product
     > .inf
     > button {
-    margin-top: 5px;
+    margin-top: 20px;
     height: 30px;
     background: rgb(228, 228, 228);
     border: none;
     border-radius: 7px;
-    font-family: Transforma Mix;
+    font-family: sans-serif;
     font-weight: 700;
     cursor: pointer;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 10px 0px 15px;
     width: 76px;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 footer {
@@ -559,4 +589,10 @@ footer > .container > .bottom > .shop {
     font-size: 32px;
     font-weight: 700;
     flex: 2;
+}
+
+.disable {
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(5px);
 }

@@ -1,37 +1,3 @@
-const previous_button = document.getElementById("previous-button");
-const next_button = document.getElementById("next-button");
-const products = document.querySelectorAll(".product-container .product");
-const product_container = document.querySelector(".product-container");
-
-var width_product_image;
-var index = 0;
-
-previous_button.addEventListener("click", () => {
-    width_product_image = products[0].clientWidth;
-    if (index > 0) {
-        index--;
-        let value_translate = index * width_product_image;
-        product_container.style.transform = `translateX(-${value_translate}px)`;
-    } else {
-        index = products.length - 1;
-        let value_translate = index * width_product_image;
-        product_container.style.transform = `translateX(-${value_translate}px)`;
-    }
-});
-
-next_button.addEventListener("click", () => {
-    width_product_image = products[0].clientWidth;
-    if (index < products.length - 1) {
-        index++;
-        let value_translate = index * width_product_image;
-        product_container.style.transform = `translateX(-${value_translate}px)`;
-    } else {
-        index = 0;
-        let value_translate = index * width_product_image;
-        product_container.style.transform = `translateX(-${value_translate}px)`;
-    }
-});
-
 class product_Model {
     constructor(srcImg, namePr, price, color, size, sale) {
         this.srcImg = srcImg;
@@ -45,14 +11,14 @@ class product_Model {
 
 var product = [
     new product_Model(
-        "/image/_ (1).jpeg",
+        "/image/AoAdidas2.avif",
         "Jordan Dri-FIT Sport",
         "1.019.000đ",
         ["white", "black", "orangered", "green"],
         ["M", "L", "XL", "2XL"]
     ),
     new product_Model(
-        "/image/_ (2).jpeg",
+        "/image/AoAdidas1.avif",
         "Jordan Dri-FIT Sport",
         "1.019.000đ",
         ["white", "black", "orangered", "green"],
@@ -60,7 +26,7 @@ var product = [
         "901.000đ"
     ),
     new product_Model(
-        "/image/Overview Archives - Rowan Fee Photography.jpeg",
+        "/image/polo-yody.jpg",
         "Jordan Dri-FIT Sport",
         "1.019.000đ",
         ["white", "black", "orangered", "green"],
@@ -68,7 +34,7 @@ var product = [
         "901.000đ"
     ),
     new product_Model(
-        "/image/airbud_GG(1).webp",
+        "/image/AoAdidas3.avif",
         "Jordan Dri-FIT Sport",
         "1.019.000đ",
         ["white", "black", "orangered", "green"],
@@ -76,7 +42,7 @@ var product = [
         "901.000đ"
     ),
     new product_Model(
-        "/image/usb_Cable.webp",
+        "/image/AoAdidas4.avif",
         "Jordan Dri-FIT Sport",
         "1.019.000đ",
         ["white", "black", "orangered", "green"],
@@ -84,7 +50,7 @@ var product = [
         "901.000đ"
     ),
     new product_Model(
-        "/image/usb_power_charger.webp",
+        "/image/QuanAdidas1.avif",
         "Jordan Dri-FIT Sport",
         "1.019.000đ",
         ["white", "black", "orangered", "green"],
@@ -92,7 +58,7 @@ var product = [
         "901.000đ"
     ),
     new product_Model(
-        "/image/watch(1).jpg",
+        "/image/QuanAdidas2.avif",
         "Jordan Dri-FIT Sport",
         "1.019.000đ",
         ["white", "black", "orangered", "green"],
@@ -100,7 +66,7 @@ var product = [
         "901.000đ"
     ),
     new product_Model(
-        "/image/watch(2).jpg",
+        "/image/QuanAdidas3.avif",
         "Jordan Dri-FIT Sport",
         "1.019.000đ",
         ["white", "black", "orangered", "green"],
