@@ -1,0 +1,337 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px 20px 100px;
+    border-radius: 40px;
+}
+
+nav > .logo > a {
+    text-decoration: none;
+    color: black;
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 30px;
+}
+
+nav > .menu > ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    font-weight: 600;
+}
+
+nav > .menu > ul > a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 10px 25px 10px 25px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav > .menu > ul > a:hover {
+    transform: scale(1.05);
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+#count_Product {
+    padding: 4px 7px;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: white;
+}
+
+nav > .menu > ul > a:hover #count_Product {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+.container {
+    width: 80vw;
+    height: 80vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container > .up {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 50px;
+    right: 84px;
+    opacity: 0;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.container > .title {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 45px;
+}
+
+.container > .list-container {
+    display: flex;
+    gap: 20px;
+}
+
+.container > .list-container > .filter {
+    flex: 1;
+    box-sizing: border-box;
+    border-right: 1px solid rgb(211, 211, 211);
+}
+
+.container > .list-container > .filter > .list-option {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    list-style: none;
+    box-sizing: border-box;
+    padding: 0 40px;
+}
+
+.container > .list-container > .filter > .list-option > div {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    align-items: center;
+}
+
+.container > .list-container > .filter > .list-option > div > img {
+    width: 25px;
+}
+
+.container > .list-container > .filter > .list-option > button {
+    height: 45px;
+    font-size: 15px;
+    text-align: left;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border: 1px solid rgb(206, 206, 206);
+    background-color: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.container > .list-container > .filter > .list-option > hr {
+    width: 100%;
+    height: 1px;
+    border: none;
+    background-color: rgb(206, 206, 206);
+}
+
+.container > .list-container > .filter > .list-option > button > img {
+    width: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.container > .list-container > .list-product {
+    flex: 4;
+    height: 100%;
+}
+
+.list-product {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-product > .title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 100px;
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.list-product > .title > div {
+    border: 2px solid rgb(218, 218, 218);
+    padding: 20px 50px 10px 50px;
+    box-sizing: content-box;
+    background-color: var(--color-white);
+    border-radius: 20px;
+    background-image: url(/public/image/Balloon\ Experience.jpg);
+    background-position: bottom;
+    background-size: cover;
+    width: 100%;
+}
+
+.list-product > .container-product {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.list-product > .container-product > .product {
+    width: 350px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.list-product > .container-product > .product > img {
+    flex: 7;
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.list-product > .container-product > .product > .inf {
+    flex: 3;
+    width: 300px;
+}
+
+.list-product > .container-product > .product > .inf > .container-price {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.list-product
+    > .container-product
+    > .product
+    > .inf
+    > .container-price
+    > .price {
+    text-decoration: line-through;
+    font-size: 13px;
+    font-family: montserrat;
+    color: gray;
+}
+
+.list-product
+    > .container-product
+    > .product
+    > .inf
+    > .container-price
+    > .sale {
+    font-weight: 600;
+    color: rgb(33, 80, 138);
+    font-size: 16px;
+    margin: 5px 0px 8px 0px;
+    font-family: montserrat;
+}
+
+.list-product > .container-product > .product > .inf > .name {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.list-product > .container-product > .product > .inf > .price {
+    font-size: 16px;
+    font-family: montserrat;
+    font-weight: 300;
+    margin: 5px 0px 5px 0px;
+}
+
+.list-product > .container-product > .product > .inf > .color {
+    display: flex;
+    gap: 23px;
+    margin-bottom: 10px;
+}
+
+.list-product > .container-product > .product > .inf > .color > div {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid rgb(188, 188, 188);
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-product > .container-product > .product > .inf > .color > div:hover {
+    border: 2px solid var(--color-primary);
+}
+
+.list-product > .container-product > .product > .inf > .color > div > div {
+    width: 14px;
+    height: 14px;
+    box-shadow: 0px 0px 2px var(--color-primary);
+    border-radius: 50%;
+}
+
+.list-product > .container-product > .product > .inf > .size {
+    display: flex;
+    gap: 13px;
+    position: relative;
+    left: -6px;
+}
+
+.list-product > .container-product > .product > .inf > .size > div {
+    width: 25px;
+    padding: 0px 3px 0px 3px;
+    border: 1px solid var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-product > .container-product > .product > .inf > button {
+    margin-top: 20px;
+    height: 30px;
+    background: rgb(228, 228, 228);
+    border: none;
+    font-family: sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0px 10px 0px 15px;
+    width: 76px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.disable {
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(5px);
+}

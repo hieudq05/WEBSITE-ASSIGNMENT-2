@@ -1,0 +1,612 @@
+:root {
+    --color-primary: black;
+    --color-white: white;
+    --color-green: rgb(3, 163, 3);
+    --color-gray: rgb(209, 209, 209);
+    --color-light: rbga(0, 0, 0, 0.4);
+    --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+}
+
+.first-page {
+    background-image: url(/public/image/Balloon\ Experience.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 100px 20px 100px;
+    border-radius: 40px;
+}
+
+nav > .logo > a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 30px;
+}
+
+nav > .menu > ul {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    font-weight: 600;
+}
+
+nav > .menu > ul > a {
+    text-decoration: none;
+    color: var(--color-white);
+    border: 1px solid var(--color-white);
+    padding: 10px 25px 10px 25px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+nav > .menu > ul > a:hover {
+    transform: scale(1.05);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-color: var(--color-primary);
+}
+
+#count_Product {
+    box-sizing: border-box;
+    padding: 2px 6px 3px 5px;
+    background-color: black;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+}
+
+nav > .menu > ul > a:hover #count_Product {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+}
+
+.up {
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 50px;
+    right: 54px;
+    opacity: 0;
+    cursor: default;
+    transition: all 0.3s ease;
+}
+
+.see-more-products-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 550px;
+}
+
+.see-more-products-container > p {
+    color: var(--color-white);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.see-more-products-container > button {
+    font-family: montserrat;
+    font-size: 27px;
+    background-color: transparent;
+    border: 1.5px solid var(--color-white);
+    color: var(--color-white);
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 200px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.see-more-products-container > button:hover {
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    transform: translateX();
+}
+
+.see-more-products-container > button:hover > p {
+    background: url(/image/Balloon\ Experience.jpg);
+    background-clip: text;
+    color: transparent;
+}
+
+.title-slide-product {
+    margin: 100px 150px 0px 150px;
+    font-size: 40px;
+    font-weight: 700;
+    background-image: url(/public/image/BackGround-Title-Slide.png);
+    -webkit-background-clip: text;
+    color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.title-slide-product > img {
+    height: 1cap;
+    position: relative;
+    top: -5px;
+}
+
+.slide-product-container {
+    height: 550px;
+    overflow: hidden;
+    margin: auto;
+    margin: 20px 150px 0px 150px;
+    border-radius: 50px;
+    background-color: transparent;
+}
+
+.slide-product-container > .product-container {
+    display: flex;
+    z-index: -1;
+    position: relative;
+    width: calc(100vw - 180px);
+    transition: all 0.3s ease;
+    gap: 20px;
+}
+
+.slide-product-container > .product-container > .product > img {
+    width: calc((100vw - 180px) / 3 - 20px);
+    height: 550px;
+    object-fit: cover;
+    border-radius: 50px;
+    z-index: 1;
+}
+
+.control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.control > button {
+    height: 50px;
+    width: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.control > button > div {
+    font-weight: 900;
+    font-size: 28px;
+    font-family: monospace;
+    color: var(--color-primary);
+    margin-bottom: 3px;
+}
+
+.control > button:active {
+    background-color: rgb(253, 240, 232);
+}
+
+.control > button:nth-child(3) > div {
+    margin-left: 3px;
+}
+
+.bussiness-partners-container {
+    width: calc(100vw - 300px);
+    position: relative;
+    top: 100px;
+    margin: auto;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bussiness-partners-container > .partners {
+    display: flex;
+    height: 150px;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.bussiness-partners-container > .partners > img {
+    width: 120px;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    background-color: var(--color-white);
+    padding: 0px 50px 0px 50px;
+    border: 2px solid var(--color-gray);
+    border-radius: 20px;
+}
+
+.list-popular-products-container {
+    margin: 150px 150px 0px 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.list-popular-products-container > .title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 100px;
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+.list-popular-products-container > .title > div {
+    border: 2px solid rgb(218, 218, 218);
+    padding: 20px 50px 10px 50px;
+    box-sizing: content-box;
+    background-color: var(--color-white);
+    border-radius: 20px;
+    background-image: url(/public/image/Balloon\ Experience.jpg);
+    background-position: bottom;
+    background-size: cover;
+    width: 100%;
+}
+
+.list-popular-products-container > .products-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.list-popular-products-container > .products-container > .product {
+    width: 370px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    transition: all 0.3s ease;
+}
+
+.list-popular-products-container > .products-container > .product > img {
+    flex: 7;
+    height: 350px;
+    width: 350px;
+    object-fit: cover;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.list-popular-products-container > .products-container > .product > .inf {
+    flex: 3;
+    width: 300px;
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > .container-price {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > .container-price
+    > .price {
+    text-decoration: line-through;
+    font-size: 13px;
+    font-family: montserrat;
+    color: gray;
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > .container-price
+    > .sale {
+    font-weight: 600;
+    color: rgb(33, 80, 138);
+    font-size: 16px;
+    margin: 5px 0px 8px 0px;
+    font-family: montserrat;
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > .name {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > .price {
+    font-size: 16px;
+    font-family: montserrat;
+    font-weight: 300;
+    margin: 5px 0px 5px 0px;
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > .color {
+    display: flex;
+    gap: 23px;
+    margin-bottom: 10px;
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > .color
+    > div {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    border: 2px solid rgb(188, 188, 188);
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > .color
+    > div:hover {
+    border: 2px solid var(--color-primary);
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > .color
+    > div
+    > div {
+    width: 14px;
+    height: 14px;
+    box-shadow: 0px 0px 2px var(--color-primary);
+    border-radius: 50%;
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > .size {
+    display: flex;
+    gap: 13px;
+    position: relative;
+    left: -6px;
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > .size
+    > div {
+    width: 25px;
+    padding: 0px 3px 0px 3px;
+    border: 1px solid var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.list-popular-products-container
+    > .products-container
+    > .product
+    > .inf
+    > button {
+    margin-top: 20px;
+    height: 30px;
+    background: rgb(228, 228, 228);
+    border: none;
+    font-family: sans-serif;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 0px 10px 0px 15px;
+    width: 76px;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+footer {
+    background: url(/public/image/Balloon\ Experience.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    color: var(--color-white);
+    border-radius: 0 0 40px 40px;
+    margin: 170px 20px 20px 20px;
+}
+
+footer > .container {
+    display: flex;
+    flex-direction: column;
+}
+
+footer > .container > .top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 100px;
+}
+
+footer > .container > .bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+footer > .container > .top > .right {
+    width: 600px;
+    flex: 2;
+    height: 100%;
+    padding: 50px 70px 0px 0px;
+}
+
+footer > .container > .top > .left {
+    width: 600px;
+    flex: 1;
+    height: 100%;
+    padding: 50px 0px 0px 70px;
+}
+
+footer > .container > .top > .left > .contact-us > .title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+footer > .container > .top > .left > .contact-us > .email {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 40px;
+    border: 1px solid var(--color-white);
+    padding: 10px 0px 10px 20px;
+    border-radius: 20px;
+    font-family: montserrat;
+    letter-spacing: 1px;
+}
+
+footer > .container > .top > .left > .contact-us > .email > a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+footer > .container > .top > .left > .contact-us > .email > a:hover {
+    text-decoration: underline;
+}
+
+footer > .container > .top > .left > .call-us > .title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+footer > .container > .top > .left > .call-us > .number {
+    font-size: 20px;
+    font-weight: 700;
+    border: 1px solid var(--color-white);
+    padding: 10px 0px 10px 30px;
+    border-radius: 20px;
+    font-family: montserrat;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer > .container > .top > .left > .call-us > .number > a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+footer > .container > .top > .left > .call-us > .number > a:hover {
+    text-decoration: underline;
+}
+
+footer > .container > .top > .right > .follow-me > .title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+footer > .container > .top > .right > .follow-me > .logo {
+    display: flex;
+    gap: 50px;
+    border: 1px solid var(--color-white);
+    border-radius: 20px;
+    padding: 7px 0px 7px 30px;
+}
+
+footer > .container > .top > .right > .follow-me > .logo > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer > .container > .top > .right > .follow-me > .logo > a > img {
+    width: 30px;
+}
+
+footer > .container > .bottom > .logo {
+    font-size: 32px;
+    font-weight: 700;
+    width: 600px;
+    padding: 0px 0px 50px 70px;
+    flex: 1;
+}
+
+footer > .container > .bottom > .shop {
+    width: 600px;
+    padding: 0px 70px 0px 0px;
+    font-size: 32px;
+    font-weight: 700;
+    flex: 2;
+}
+
+.disable {
+    pointer-events: none;
+    z-index: 1;
+    filter: blur(5px);
+}

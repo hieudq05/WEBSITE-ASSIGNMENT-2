@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Giỏ hàng</title>
+        <link rel="stylesheet" href="./style/cart.css" />
+    </head>
+    <body>
+        <nav>
+            <div class="logo">
+                <a href="index.html">Bwas</a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <a href="allProduct.html">
+                        <li>Tất cả sản phẩm</li>
+                    </a>
+                    <a href="login.html"><li>Đăng nhập</li></a>
+                    <a href="cart.html">
+                        <li>Giỏ hàng</li>
+                        <div id="count_Product">51</div>
+                    </a>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="list-product">
+                <div class="title">Giỏ hàng</div>
+                <div class="status">2 sản phẩm đang có trong giỏ hàng</div>
+                <div class="product-container"></div>
+            </div>
+            <div class="sum-price">
+                <div class="sum-price-container">
+                    <div class="title">Tóm tắt đơn hàng</div>
+                    <div class="sum">
+                        <div class="title">Tổng tiền sản phẩm</div>
+                        <div class="price">-</div>
+                    </div>
+                    <div class="transport">
+                        <div class="title">Ước tính phí vận chuyển</div>
+                        <div class="price">Miễn phí</div>
+                    </div>
+                    <div class="tax">
+                        <div class="title">Thuế ước tính</div>
+                        <div class="price">-</div>
+                    </div>
+                    <hr />
+                    <div class="sum-all">
+                        <div class="title">Tổng cộng</div>
+                        <div class="price">-</div>
+                    </div>
+                    <hr />
+                    <button>Thanh toán</button>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./js/products.js"></script>
+    <script src="./js/addToCart.js"></script>
+    <script src="./js/cart.js"></script>
+</html>

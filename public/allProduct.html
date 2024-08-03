@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Tất cả sản phẩm</title>
+        <link rel="stylesheet" href="./style/allProduct.css" />
+        <link rel="stylesheet" href="./style/product_Frame.css" />
+    </head>
+    <body>
+        <div class="main-page">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">Bwas</a>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <a href="allProduct.html">
+                            <li>Tất cả sản phẩm</li>
+                        </a>
+                        <a href="login.html"><li>Đăng nhập</li></a>
+                        <a href="cart.html">
+                            <li>Giỏ hàng</li>
+                            <div id="count_Product">0</div>
+                        </a>
+                    </ul>
+                </div>
+            </nav>
+            <div class="container">
+                <button class="up">
+                    <img src="./image/up.png" alt="" style="width: 32px" />
+                </button>
+                <div class="title">Tất cả sản phẩm của chúng tôi</div>
+                <div class="list-container">
+                    <div class="filter">
+                        <div class="list-option">
+                            <div>
+                                Bộ lọc:
+                                <img src="./image/filter.png" alt="" />
+                            </div>
+                            <button style="border: 1px solid black">
+                                <div>Tất cả</div>
+                                <img
+                                    src="./image/check.png"
+                                    alt=""
+                                    style="opacity: 1"
+                                />
+                            </button>
+                            <hr />
+                            <button>
+                                <div>Giày</div>
+                                <img src="./image/check.png" alt="" />
+                            </button>
+                            <button>
+                                <div>Quần</div>
+                                <img src="./image/check.png" alt="" />
+                            </button>
+                            <button>
+                                <div>Áo</div>
+                                <img src="./image/check.png" alt="" />
+                            </button>
+                            <button>
+                                <div>Sản phẩm giảm giá</div>
+                                <img src="./image/check.png" alt="" />
+                            </button>
+                        </div>
+                    </div>
+                    <div class="list-product">
+                        <div class="container-product"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./js/products.js"></script>
+    <script src="./js/product_Frame.js"></script>
+    <script src="./js/addToCart.js"></script>
+    <script src="./js/allProduct.js"></script>
+</html>
