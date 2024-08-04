@@ -15,7 +15,7 @@ class product_Model {
 var product = [
     new product_Model(
         "261020053",
-        "./image/AoAdidas2.avif",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/17d79451-f6f2-4b5e-94ee-5c9ba460c2ef/AIR+MAX+DN+OLY.png",
         "Jordan Dri-FIT Sport",
         "1019000",
         ["white", "black", "orangered", "green"],
@@ -37,7 +37,7 @@ var product = [
     ),
     new product_Model(
         "261020054",
-        "./image/polo-yody.jpg",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f4add04d-480d-415c-9ae8-ca8b047ddb5f/NIKE+ZOOMX+INVINCIBLE+RUN+FK+3.png",
         "Jordan Dri-FIT Sport",
         "1019000",
         ["white", "black", "orangered", "green"],
@@ -81,8 +81,8 @@ var product = [
     ),
     new product_Model(
         "261020057",
-        "./image/QuanAdidas2.avif",
-        "Jordan Dri-FIT Sport",
+        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/06fd1bc0-52d9-4459-9dc4-d0290f3a7044/NIKE+DOWNSHIFTER+13+WIDE.png",
+        "Nike Downshifter 13",
         "1019000",
         ["white", "black", "orangered", "pink"],
         ["M", "L", "XL"],
@@ -124,7 +124,7 @@ var product = [
     ),
     new product_Model(
         "2610200511",
-        "./image/polo-yody.jpg",
+        "./image/QuanAdidas1.avif",
         "Jordan Dri-FIT Sport",
         "1019000",
         ["white", "black", "orangered", "green"],
@@ -268,5 +268,8 @@ function displayProduct(product_array, container_Product) {
         productNode.appendChild(productImg);
         productNode.appendChild(inf);
         container_Product.appendChild(productNode);
+        let idProduct = document.createElement("div");
+        idProduct.innerHTML = product_array[index].id;
+        idProduct.style.display = "none";
     }
 }

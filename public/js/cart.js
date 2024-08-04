@@ -39,6 +39,17 @@ function displaySumPrice() {
                                 .childNodes[1].value
                         )
                 );
+            productArr[
+                index
+            ].childNodes[0].childNodes[1].childNodes[1].childNodes[0].innerHTML =
+                parsePrice(
+                    cartProductArr[index].sale *
+                        parseNumber(
+                            productArr[index].childNodes[0].childNodes[1]
+                                .childNodes[0].childNodes[2].childNodes[1]
+                                .childNodes[1].value
+                        )
+                );
             sumPrice += parseNumber(
                 productArr[index].childNodes[0].childNodes[1].childNodes[1]
                     .childNodes[1].innerHTML
@@ -76,13 +87,33 @@ function deleteFromList(buttonDelete) {
     let productContainer = document.querySelector(
         ".container .list-product .product-container"
     );
-    productContainer.removeChild(
-        buttonDelete.parentNode.parentNode.parentNode.parentNode.parentNode
-            .nextSibling
-    );
-    productContainer.removeChild(
-        buttonDelete.parentNode.parentNode.parentNode.parentNode.parentNode
-    );
+    for (
+        let index = 0;
+        index < productContainer.childNodes.length;
+        index += 2
+    ) {
+        if (
+            buttonDelete.parentNode.parentNode.parentNode.parentNode
+                .parentNode === productContainer.childNodes[index]
+        ) {
+            let cartProductAfterDelete = JSON.parse(
+                localStorage.getItem("cart")
+            );
+            cartProductAfterDelete.splice(index / 2, 1);
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cartProductAfterDelete)
+            );
+            productContainer.removeChild(
+                buttonDelete.parentNode.parentNode.parentNode.parentNode
+                    .parentNode.nextSibling
+            );
+            productContainer.removeChild(
+                buttonDelete.parentNode.parentNode.parentNode.parentNode
+                    .parentNode
+            );
+        }
+    }
 }
 
 function displayStatusCart() {
@@ -157,6 +188,7 @@ function displayCartProduct(productArr, allProductArr) {
                 });
             }
         });
+        selectList.value = cartProduct.size;
         let labelCount = document.createElement("div");
         labelCount.innerHTML = "Số lượng:";
         labelCount.classList.add("labelCount");
@@ -187,9 +219,60 @@ function displayCartProduct(productArr, allProductArr) {
     });
 }
 
+function updateCountCart(inputCount) {
+    let productContainer = document.querySelector(
+        ".container .list-product .product-container"
+    );
+    for (
+        let index = 0;
+        index < productContainer.childNodes.length;
+        index += 2
+    ) {
+        if (
+            inputCount.parentNode.parentNode.parentNode.parentNode.parentNode
+                .parentNode === productContainer.childNodes[index]
+        ) {
+            let cartProductAfterUpdateCount = JSON.parse(
+                localStorage.getItem("cart")
+            );
+            cartProductAfterUpdateCount[index / 2].count = inputCount.value;
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cartProductAfterUpdateCount)
+            );
+        }
+    }
+}
+
+function updateSizeCart(inputSize) {
+    let productContainer = document.querySelector(
+        ".container .list-product .product-container"
+    );
+    for (
+        let index = 0;
+        index < productContainer.childNodes.length;
+        index += 2
+    ) {
+        if (
+            inputSize.parentNode.parentNode.parentNode.parentNode.parentNode
+                .parentNode === productContainer.childNodes[index]
+        ) {
+            let cartProductAfterUpdateSize = JSON.parse(
+                localStorage.getItem("cart")
+            );
+            cartProductAfterUpdateSize[index / 2].size = inputSize.value;
+            localStorage.setItem(
+                "cart",
+                JSON.stringify(cartProductAfterUpdateSize)
+            );
+        }
+    }
+}
+
 let cartProductArr = JSON.parse(localStorage.getItem("cart"));
 displayCartProduct(cartProductArr, product);
 displaySumPrice();
+displayCountCart();
 displayStatusCart();
 
 var productCount = document.querySelectorAll(
@@ -198,8 +281,13 @@ var productCount = document.querySelectorAll(
 var btnDeleteProduct = document.querySelectorAll(
     ".list-product .product-container .product .top .inf .inf1 .control button"
 );
+var optionSize = document.querySelectorAll(
+    ".list-product > .product-container > .product > .top > .inf > .inf1 > .type2 > .size > select"
+);
 productCount.forEach((count) => {
     count.addEventListener("change", () => {
+        updateCountCart(count);
+        displayCountCart();
         displaySumPrice();
     });
 });
@@ -210,29 +298,8 @@ btnDeleteProduct.forEach((btnDelete) => {
         displayStatusCart();
     });
 });
-displayCountCart();
-
-let cart = [
-    new product_Model(
-        "261020051",
-        "./image/QuanAdidas3.avif",
-        "Jordan Dri-FIT Sport",
-        "1019000",
-        "white",
-        "L",
-        "901000",
-        2,
-        "áo"
-    ),
-    new product_Model(
-        "261020052",
-        "./image/QuanAdidas1.avif",
-        "Jordan Dri-FIT Sport",
-        "1039000",
-        "black",
-        "XL",
-        undefined,
-        5,
-        "áo"
-    ),
-];
+optionSize.forEach((option) => {
+    option.addEventListener("change", () => {
+        updateSizeCart(option);
+    });
+});

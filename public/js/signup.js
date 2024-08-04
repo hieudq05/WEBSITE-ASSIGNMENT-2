@@ -49,11 +49,15 @@ reEnterPassword.addEventListener("keyup", () => {
         statusReEnterPassword.innerHTML = "Mật khẩu không trùng khớp";
         statusReEnterPassword.style.color = "red";
         statusReEnterPassword.style.margin = "15px 0 0 0";
+        reEnterPassword.style.outlineColor = "red";
+        reEnterPassword.style.borderColor = "red";
     } else {
         reEnterPassword.style.color = "black";
         reEnterPassword.style.borderColor = "black";
         statusReEnterPassword.style.margin = "0";
         statusReEnterPassword.innerHTML = "";
+        reEnterPassword.style.outlineColor = "black";
+        reEnterPassword.style.borderColor = "black";
     }
 });
 password.addEventListener("keyup", () => {
@@ -61,23 +65,24 @@ password.addEventListener("keyup", () => {
         statusReEnterPassword.innerHTML = "Mật khẩu không trùng khớp";
         statusReEnterPassword.style.color = "red";
         statusReEnterPassword.style.margin = "15px 0 0 0";
+        reEnterPassword.style.outlineColor = "red";
+        reEnterPassword.style.borderColor = "red";
     } else {
         reEnterPassword.style.color = "black";
         reEnterPassword.style.borderColor = "black";
         statusReEnterPassword.style.margin = "0";
         statusReEnterPassword.innerHTML = "";
+        reEnterPassword.style.outlineColor = "black";
+        reEnterPassword.style.borderColor = "black";
     }
 });
 reEnterPassword.addEventListener("blur", () => {
     if (
-        password.value !== reEnterPassword.value &&
+        password.value !== reEnterPassword.value ||
         reEnterPassword.value === ""
     ) {
         reEnterPassword.style.borderColor = "red";
-    } else if (
-        password.value === reEnterPassword.value &&
-        reEnterPassword.value !== ""
-    ) {
+    } else {
         reEnterPassword.style.borderColor = "black";
     }
 });
@@ -85,8 +90,37 @@ reEnterPassword.addEventListener("blur", () => {
 const btnSignup = document.getElementById("signup").parentNode.parentNode;
 btnSignup.addEventListener("submit", function (event) {
     event.preventDefault();
-    if (statusReEnterPassword.innerHTML === "") {
-        let notice = document.getElementsByClassName("notice")[0];
-        notice.style.display = "flex";
+    if (
+        statusReEnterPassword.innerHTML === "" ||
+        statusReEnterPassword.innerHTML === "Đã tồn tại tài khoản!"
+    ) {
+        let userName = document.querySelector(
+            "form > .form_login > input[type='email']"
+        );
+        let password = document.querySelector(
+            "form > .form_login > .password_area > input[type='password']"
+        );
+        let accountArr = JSON.parse(localStorage.getItem("account"));
+        let checkAcc = true;
+        accountArr.forEach((acc) => {
+            if (acc.username === userName.value) {
+                checkAcc = false;
+            }
+        });
+        if (checkAcc === true) {
+            statusReEnterPassword.style.margin = "0";
+            statusReEnterPassword.innerHTML = "";
+            let account = {
+                username: userName.value,
+                pass: password.value,
+            };
+            accountArr.push(account);
+            localStorage.setItem("account", JSON.stringify(accountArr));
+            location.href = "/public/index.html";
+        } else {
+            statusReEnterPassword.innerHTML = "Đã tồn tại tài khoản!";
+            statusReEnterPassword.style.color = "red";
+            statusReEnterPassword.style.margin = "15px 0 0 0";
+        }
     }
 });

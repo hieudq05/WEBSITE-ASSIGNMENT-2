@@ -37,11 +37,17 @@ function addProductToCart() {
     let size = document.querySelectorAll(
         ".product-frame > .product-inf > .size > button"
     );
+    let namePr = size[0].parentNode.parentNode.firstChild.innerHTML;
+    let srcImg =
+        size[0].parentNode.parentNode.parentNode.childNodes[1].childNodes[0].getAttribute(
+            "src"
+        );
     let price = parseNumber(
         document.querySelector(
             ".product-frame > .product-inf > .price > .price-curent"
         ).innerHTML
     );
+    let id = document.getElementsByClassName("id")[0].innerHTML;
     let sale;
     if (
         document.querySelector(
@@ -59,17 +65,45 @@ function addProductToCart() {
 
     let sizeIsChoosed = false;
     size.forEach((sizeChild) => {
-        if (sizeChild.getAttribute("class") !== null) {
+        if (sizeChild.className) {
             sizeIsChoosed = true;
         }
     });
     let colorIsChoosed = false;
     color.forEach((colorChild) => {
-        if (colorChild.getAttribute("class") !== null) {
+        if (colorChild.parentNode.className) {
             colorIsChoosed = true;
         }
     });
     if (colorIsChoosed === false) {
-        
+        color[0].parentNode.parentNode.previousSibling.style.color = "red";
+    }
+    if (sizeIsChoosed === false) {
+        size[0].parentNode.previousSibling.style.color = "red";
+    }
+    if (colorIsChoosed === true && sizeIsChoosed === true) {
+        let cartProductAdded = new product_Model();
+        color.forEach((colorChild) => {
+            if (colorChild.parentNode.className === "button-color-active") {
+                cartProductAdded.color = colorChild.style.backgroundColor;
+            }
+        });
+        size.forEach((sizeChild) => {
+            if (sizeChild.className === "button-size-active") {
+                cartProductAdded.size = sizeChild.innerHTML;
+            }
+        });
+        cartProductAdded.count = count.value;
+        cartProductAdded.id = id;
+        cartProductAdded.namePr = namePr;
+        cartProductAdded.price = price;
+        cartProductAdded.sale = sale;
+        cartProductAdded.srcImg = srcImg;
+        cartProductAdded.type = undefined;
+        let cartProductArr = JSON.parse(localStorage.getItem("cart"));
+        cartProductArr.push(cartProductAdded);
+        cartProductArr.sort((a, b) => a.id - b.id);
+        localStorage.setItem("cart", JSON.stringify(cartProductArr));
+        displayCountCart();
     }
 }

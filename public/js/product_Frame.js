@@ -5,6 +5,7 @@ function chooseSize(btnSize) {
             element != btnSize
         ) {
             element.classList.toggle("button-size-active");
+            element.parentNode.previousSibling.style.color = "black";
         }
     });
 }
@@ -16,6 +17,7 @@ function chooseColor(btnColor) {
             element != btnColor.parentNode
         ) {
             element.classList.toggle("button-color-active");
+            element.parentNode.previousSibling.style.color = "black";
         }
     });
 }
@@ -176,6 +178,7 @@ var getMoreInf = (productElement, productArray, containerName) => {
                     priceCurent.style.color = "black";
                     priceCurent.style.textDecoration = "none";
                     priceCurent.style.fontSize = "25px";
+                    priceCurent.style.fontWeight = "500";
                     priceCurent.classList.add("price-curent");
                     price.appendChild(priceCurent);
                 }
@@ -244,7 +247,7 @@ var getMoreInf = (productElement, productArray, containerName) => {
                 productInf.appendChild(control);
                 let btnAddCart = document.createElement("button");
                 btnAddCart.innerHTML = "Thêm vào giỏ hàng";
-                btnAddCart.setAttribute("onclick", "");
+                btnAddCart.setAttribute("onclick", "addProductToCart()");
                 control.appendChild(btnAddCart);
                 let btnBuyNow = document.createElement("button");
                 btnBuyNow.innerHTML = "Mua ngay";
@@ -261,6 +264,11 @@ var getMoreInf = (productElement, productArray, containerName) => {
                     document.querySelector("nav .menu ul a div").innerHTML;
                 cart.appendChild(count_Product_In_Cart);
                 control.appendChild(cart);
+                let idProduct = document.createElement("div");
+                idProduct.innerHTML = productArray[index].id;
+                idProduct.style.display = "none";
+                idProduct.className = "id";
+                productInf.appendChild(idProduct);
             }
         }
     }

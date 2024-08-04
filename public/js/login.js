@@ -2,6 +2,7 @@ const txtEmail = document.getElementById("txtUsername");
 const lblEmail = document.getElementById("label_email");
 const txtPassword = document.getElementById("txtPassword");
 const lblPassword = document.getElementById("label_password");
+const btnSubmit = document.getElementById("login").parentNode.parentNode;
 
 txtEmail.addEventListener("focus", () => {
     lblEmail.style.top = "20px";
@@ -57,3 +58,16 @@ for (
         }
     });
 }
+
+btnSubmit.addEventListener("submit", function (event) {
+    event.preventDefault();
+    let accountArr = JSON.parse(localStorage.getItem("account"));
+    accountArr.forEach((element) => {
+        if (
+            element.username === txtEmail.value &&
+            element.pass === txtPassword.value
+        ) {
+            location.href = "/public/index.html";
+        }
+    });
+});

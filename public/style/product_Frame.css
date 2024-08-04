@@ -15,13 +15,13 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 80vh;
+    height: 75vh;
     width: 70vw;
     background-color: var(--color-white);
     display: flex;
     padding: 40px;
     box-sizing: border-box;
-    gap: 40px;
+    gap: 20px;
     display: none;
     box-shadow: var(--box-shadow);
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -130,7 +130,7 @@
 }
 
 .product-frame > .product-inf > .label-size {
-    margin-top: 35px;
+    margin-top: 25px;
 }
 
 .product-frame > .product-inf > .size {
@@ -145,7 +145,7 @@
     border-radius: 10px;
     font-size: 17px;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.2s linear;
     background-color: transparent;
 }
 
@@ -159,7 +159,7 @@
 }
 
 .product-frame > .product-inf > .label-color {
-    margin-top: 35px;
+    margin-top: 20px;
 }
 
 .product-frame > .product-inf > .color {
@@ -197,7 +197,7 @@
 }
 
 .product-frame > .product-inf > .label-count {
-    margin-top: 35px;
+    margin-top: 15px;
 }
 
 .product-frame > .product-inf > .count {
@@ -282,7 +282,7 @@
     height: 50px;
     padding: 0 20px;
     border: 1px solid black;
-    background-color: rgb(245, 245, 245);
+    background-color: transparent;
     border-radius: 10px;
     font-size: 15px;
     cursor: pointer;
@@ -293,7 +293,7 @@
     height: 50px;
     padding: 0 20px;
     border: 1px solid black;
-    background-color: rgb(245, 245, 245);
+    background-color: transparent;
     border-radius: 10px;
     font-size: 15px;
     cursor: pointer;
