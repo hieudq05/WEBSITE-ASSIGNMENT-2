@@ -15,9 +15,13 @@ function displayCountCart() {
     let count_Product = document.querySelector("nav .menu ul a div");
     let cartProductArr = JSON.parse(localStorage.getItem("cart"));
     let count = 0;
-    cartProductArr.forEach((cartProduct) => {
-        count += Number.parseInt(cartProduct.count);
-    });
+    if (cartProductArr !== null) {
+        cartProductArr.forEach((cartProduct) => {
+            count += Number.parseInt(cartProduct.count);
+        });
+    } else {
+        count = count_Product.innerHTML;
+    }
     count_Product.innerHTML = count;
     let count_Product_In_Product_Frame = document.querySelector(
         ".product-frame .product-inf .add button:nth-child(2) div"
@@ -100,7 +104,10 @@ function addProductToCart() {
         cartProductAdded.sale = sale;
         cartProductAdded.srcImg = srcImg;
         cartProductAdded.type = undefined;
-        let cartProductArr = JSON.parse(localStorage.getItem("cart"));
+        let cartProductArr =
+            JSON.parse(localStorage.getItem("cart")) === null
+                ? []
+                : JSON.parse(localStorage.getItem("cart"));
         cartProductArr.push(cartProductAdded);
         cartProductArr.sort((a, b) => a.id - b.id);
         localStorage.setItem("cart", JSON.stringify(cartProductArr));

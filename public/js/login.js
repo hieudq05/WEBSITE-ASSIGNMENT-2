@@ -61,6 +61,7 @@ for (
 
 btnSubmit.addEventListener("submit", function (event) {
     event.preventDefault();
+    console.log(document.getElementsByClassName("noticePassword")[0]);
     let accountArr = JSON.parse(localStorage.getItem("account"));
     accountArr.forEach((element) => {
         if (

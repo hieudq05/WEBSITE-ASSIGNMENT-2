@@ -105,7 +105,10 @@ btnSignup.addEventListener("submit", function (event) {
                 "form > .form_login > .password_area > input[type='text']"
             );
         }
-        let accountArr = JSON.parse(localStorage.getItem("account"));
+        let accountArr =
+            JSON.parse(localStorage.getItem("account")) === null
+                ? []
+                : JSON.parse(localStorage.getItem("account"));
         let checkAcc = true;
         accountArr.forEach((acc) => {
             if (acc.username === userName.value) {
