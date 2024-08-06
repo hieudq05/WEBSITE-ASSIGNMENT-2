@@ -249,9 +249,6 @@ var getMoreInf = (productElement, productArray, containerName) => {
                 btnAddCart.innerHTML = "Thêm vào giỏ hàng";
                 btnAddCart.setAttribute("onclick", "addProductToCart()");
                 control.appendChild(btnAddCart);
-                let btnBuyNow = document.createElement("button");
-                btnBuyNow.innerHTML = "Mua ngay";
-                control.appendChild(btnBuyNow);
                 let cart = document.createElement("button");
                 let cart_Icon = document.createElement("img");
                 cart_Icon.src = "./image/cartIcon.png";

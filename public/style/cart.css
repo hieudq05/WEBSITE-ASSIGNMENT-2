@@ -328,9 +328,8 @@ nav > .menu > ul > a:hover #count_Product {
     > .inf
     > .inf2
     > .sale {
+    font-weight: 600;
     font-size: 1.05rem;
-    color: gray;
-    text-decoration: line-through;
 }
 
 .container
@@ -341,8 +340,9 @@ nav > .menu > ul > a:hover #count_Product {
     > .inf
     > .inf2
     > .price {
-    font-weight: 600;
     font-size: 1.05rem;
+    color: gray;
+    text-decoration: line-through;
 }
 
 .container > .sum-price {

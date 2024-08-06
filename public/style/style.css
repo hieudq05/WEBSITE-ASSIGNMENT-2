@@ -193,7 +193,7 @@ nav > .menu > ul > a:hover #count_Product {
 }
 
 .slide-product-container > .product-container > .product > img {
-    width: calc((100vw - 180px) / 3 - 20px);
+    width: calc((100vw - 300px) / 3 - 20px);
     height: 550px;
     object-fit: cover;
     border-radius: 50px;
@@ -367,7 +367,7 @@ nav > .menu > ul > a:hover #count_Product {
     > .product
     > .inf
     > .name {
-    font-size: 15px;
+    font-size: 1.05rem;
     font-weight: 600;
 }
 

@@ -20,7 +20,7 @@ function displayCountCart() {
     });
     count_Product.innerHTML = count;
     let count_Product_In_Product_Frame = document.querySelector(
-        ".product-frame .product-inf .add button:nth-child(3) div"
+        ".product-frame .product-inf .add button:nth-child(2) div"
     );
     if (count_Product_In_Product_Frame !== null) {
         count_Product_In_Product_Frame.innerHTML = count;
@@ -62,7 +62,6 @@ function addProductToCart() {
             ).innerHTML
         );
     }
-
     let sizeIsChoosed = false;
     size.forEach((sizeChild) => {
         if (sizeChild.className) {
@@ -75,6 +74,7 @@ function addProductToCart() {
             colorIsChoosed = true;
         }
     });
+
     if (colorIsChoosed === false) {
         color[0].parentNode.parentNode.previousSibling.style.color = "red";
     }

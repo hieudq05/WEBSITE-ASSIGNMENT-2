@@ -52,7 +52,7 @@ function displaySumPrice() {
                 );
             sumPrice += parseNumber(
                 productArr[index].childNodes[0].childNodes[1].childNodes[1]
-                    .childNodes[1].innerHTML
+                    .childNodes[0].innerHTML
             );
         } else {
             productArr[
@@ -211,11 +211,19 @@ function displayCartProduct(productArr, allProductArr) {
             sale.innerHTML = parsePrice(cartProduct.sale * cartProduct.count);
             sale.classList.add("sale");
             inf2.appendChild(sale);
+            let price = document.createElement("div");
+            price.innerHTML = parsePrice(cartProduct.price * cartProduct.count);
+            price.classList.add("price");
+            inf2.appendChild(price);
+        } else {
+            let price = document.createElement("div");
+            price.innerHTML = parsePrice(cartProduct.price * cartProduct.count);
+            price.classList.add("price");
+            price.style.textDecoration = "none";
+            price.style.fontWeight = "500";
+            price.style.color = "black";
+            inf2.appendChild(price);
         }
-        let price = document.createElement("div");
-        price.innerHTML = parsePrice(cartProduct.price * cartProduct.count);
-        price.classList.add("price");
-        inf2.appendChild(price);
     });
 }
 
@@ -294,6 +302,7 @@ productCount.forEach((count) => {
 btnDeleteProduct.forEach((btnDelete) => {
     btnDelete.addEventListener("click", () => {
         deleteFromList(btnDelete);
+        displayCountCart();
         displaySumPrice();
         displayStatusCart();
     });

@@ -267,29 +267,18 @@
     transform: scale(1.05);
 }
 
-.product-frame > .product-inf > .add > button:nth-child(2) {
+.product-frame > .product-inf > .add > button:nth-child(1) {
     height: 50px;
     padding: 0 20px;
     border: none;
     background-color: black;
     border-radius: 10px;
     font-size: 15px;
-    color: var(--color-white);
     cursor: pointer;
+    color: white;
 }
 
-.product-frame > .product-inf > .add > button:nth-child(1) {
-    height: 50px;
-    padding: 0 20px;
-    border: 1px solid black;
-    background-color: transparent;
-    border-radius: 10px;
-    font-size: 15px;
-    cursor: pointer;
-    color: rgb(0, 0, 0);
-}
-
-.product-frame > .product-inf > .add > button:nth-child(3) {
+.product-frame > .product-inf > .add > button:nth-child(2) {
     height: 50px;
     padding: 0 20px;
     border: 1px solid black;
@@ -302,11 +291,11 @@
     align-items: center;
 }
 
-.product-frame > .product-inf > .add > button:nth-child(3) > img {
+.product-frame > .product-inf > .add > button:nth-child(2) > img {
     height: 30px;
 }
 
-.product-frame > .product-inf > .add > button:nth-child(3) > div {
+.product-frame > .product-inf > .add > button:nth-child(2) > div {
     box-sizing: border-box;
     padding: 2px 6px 3px 5px;
     background-color: black;
