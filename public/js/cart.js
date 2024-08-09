@@ -161,7 +161,9 @@ function displayCartProduct(productArr, allProductArr) {
         productName.classList.add("productName");
         inf1.appendChild(productName);
         let type = document.createElement("div");
-        type.innerHTML = cartProduct.color;
+        type.innerHTML =
+            cartProduct.color.charAt(0).toUpperCase() +
+            cartProduct.color.slice(1);
         type.classList.add("type");
         inf1.appendChild(type);
         let type2 = document.createElement("div");
@@ -277,7 +279,51 @@ function updateSizeCart(inputSize) {
     }
 }
 
-let cartProductArr = JSON.parse(localStorage.getItem("cart"));
+function setName() {
+    const userLoggedIn =
+        JSON.parse(localStorage.getItem("accountLoggedIn")) == null
+            ? "Đăng nhập"
+            : JSON.parse(localStorage.getItem("accountLoggedIn"));
+    var loginName = document.querySelector("nav > .menu > ul > a:nth-child(2)")
+        .childNodes[0];
+    switch (userLoggedIn) {
+        case "Đăng nhập":
+            loginName.innerHTML = userLoggedIn;
+            loginName.parentNode.setAttribute("href", "/public/login.html");
+            break;
+
+        default:
+            loginName.innerHTML = userLoggedIn.fullname;
+            let popupLogOut = document.createElement("a");
+            popupLogOut.innerHTML = "Đăng xuất";
+            popupLogOut.style.display = "none";
+            popupLogOut.style.color = "white";
+            loginName.parentNode.addEventListener("mouseover", () => {
+                popupLogOut.style.display = "flex";
+            });
+            loginName.parentNode.addEventListener("mouseout", () => {
+                popupLogOut.style.display = "none";
+            });
+            popupLogOut.addEventListener("mouseover", () => {
+                popupLogOut.style.display = "flex";
+            });
+            popupLogOut.addEventListener("mouseout", () => {
+                popupLogOut.style.display = "none";
+            });
+            popupLogOut.setAttribute("href", "#");
+            loginName.parentNode.appendChild(popupLogOut);
+            loginName.parentNode.addEventListener("click", () => {
+                localStorage.removeItem("accountLoggedIn");
+                location.reload();
+            });
+            break;
+    }
+}
+
+let cartProductArr =
+    JSON.parse(localStorage.getItem("cart")) === null
+        ? []
+        : JSON.parse(localStorage.getItem("cart"));
 displayCartProduct(cartProductArr, product);
 displaySumPrice();
 displayCountCart();
@@ -311,4 +357,21 @@ optionSize.forEach((option) => {
     option.addEventListener("change", () => {
         updateSizeCart(option);
     });
+});
+
+setName();
+
+const btnCheckOut = document.querySelector(
+    ".container > .sum-price > .sum-price-container > button"
+);
+btnCheckOut.addEventListener("click", () => {
+    if (cartProductArr.length !== 0) {
+        if (localStorage.getItem("accountLoggedIn")) {
+            alert("Thanh toán thành công");
+            localStorage.removeItem("cart");
+            location.reload();
+        } else {
+            alert("Vui lòng đăng nhập hoặc đăng ký để thanh toán!");
+        }
+    }
 });

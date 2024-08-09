@@ -13,20 +13,19 @@
                 ><img src="./image/left.png" alt=""
             /></a>
             <!-- Tạo form đăng ký bằng thẻ form -->
-            <form action="">
+            <form action="index.html">
                 <div class="status">Hãy đăng ký để không bỏ lỡ👍</div>
 
                 <!-- Container chứa form! Dùng để căn chỉnh thành phần -->
                 <div class="form_login">
                     <!-- Thanh thông báo -->
-                    <div class="notice">Đăng ký thành công. Hãy mua sắm ngay nào!</div>
+                    <div class="notice">
+                        Đăng ký thành công. Hãy mua sắm ngay nào!
+                    </div>
                     <label for="txtUsername" id="label_email">Email*</label>
-                    <input
-                        type="email"
-                        name="username"
-                        id="txtUsername"
-                        required
-                    />
+                    <input type="email" id="txtUsername" required />
+                    <label for="txtName" id="label_name">Họ và tên*</label>
+                    <input type="text" id="txtName" required />
                     <label for="txtPassword" id="label_password"
                         >Mật khẩu*</label
                     >

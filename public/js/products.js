@@ -16,22 +16,35 @@ var product = [
     new product_Model(
         "261020053",
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/17d79451-f6f2-4b5e-94ee-5c9ba460c2ef/AIR+MAX+DN+OLY.png",
-        "Jordan Dri-FIT Sport",
-        "1019000",
-        ["white", "black", "orangered", "green"],
-        ["M", "L", "XL", "2XL"],
+        "Nike Air Max Dn",
+        "4236400",
+        ["white", "black", "green", "blue", "gray"],
+        [
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "50",
+            "51",
+            "52",
+        ],
         undefined,
         undefined,
-        "áo"
+        "giày"
     ),
     new product_Model(
         "261020052",
-        "./image/AoAdidas1.avif",
-        "Jordan Dri-FIT Sport",
-        "1039000",
-        ["white", "black", "orangered", "green"],
-        ["M", "L", "XL"],
-        undefined,
+        "/public/image/P2.jpg",
+        "Nike Solo Swoosh",
+        "2741200",
+        ["white", "gray", "brown", "green", "black"],
+        ["XS", "S", "S Tall", "M", "M Tall", "L", "L Tall", "XL", "2XL"],
+        "1943012",
         undefined,
         "áo"
     ),
@@ -39,65 +52,65 @@ var product = [
         "261020054",
         "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/f4add04d-480d-415c-9ae8-ca8b047ddb5f/NIKE+ZOOMX+INVINCIBLE+RUN+FK+3.png",
         "Jordan Dri-FIT Sport",
-        "1019000",
+        "3519000",
         ["white", "black", "orangered", "green"],
         ["M", "L", "XL"],
-        "901000",
+        "1726663",
         undefined,
-        "áo"
+        "giày"
     ),
     new product_Model(
         "261020051",
-        "./image/AoAdidas3.avif",
-        "Jordan Dri-FIT Sport",
-        "1019000",
+        "/public/image/P3.png",
+        "Nike SB T-Shirt",
+        "1119000",
         ["white", "black", "orangered", "green"],
-        ["M", "L", "XL"],
+        ["S", "M", "L", "XL", "2XL"],
         undefined,
         undefined,
         "áo"
     ),
     new product_Model(
         "261020055",
-        "./image/AoAdidas4.avif",
-        "Jordan Dri-FIT Sport",
-        "1019000",
-        ["white", "black", "orangered"],
-        ["M", "L", "XL"],
-        "901000",
+        "/public/image/P4.jpg",
+        "Air Jordan T-Shirt",
+        "1739000",
+        ["cornflowerblue"],
+        ["US XS", "US S", "US M", "US L", "US XL"],
         undefined,
-        "quần"
-    ),
-    new product_Model(
-        "261020056",
-        "./image/QuanAdidas1.avif",
-        "Jordan Dri-FIT Sport",
-        "1019000",
-        ["white", "orangered", "green"],
-        ["M", "L", "XL"],
-        undefined,
-        undefined,
-        "quần"
-    ),
-    new product_Model(
-        "261020057",
-        "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,q_auto:eco/06fd1bc0-52d9-4459-9dc4-d0290f3a7044/NIKE+DOWNSHIFTER+13+WIDE.png",
-        "Nike Downshifter 13",
-        "1019000",
-        ["white", "black", "orangered", "pink"],
-        ["M", "L", "XL"],
-        "901000",
         undefined,
         "áo"
     ),
     new product_Model(
+        "261020056",
+        "/public/image/P5.jpg",
+        "Air Jordan Wordmark Hoodie",
+        "2759000",
+        ["blue"],
+        ["US S", "US M", "US L", "US XL", "US 2XL"],
+        undefined,
+        undefined,
+        "áo"
+    ),
+    new product_Model(
+        "261020057",
+        "/public/image/S3.png",
+        "Nike Downshifter 13 Shoes",
+        "2069000",
+        ["black", "white", "gray"],
+        ["39", "40", "41", "42", "43"],
+        "1901000",
+        undefined,
+        "giày"
+    ),
+    new product_Model(
         "261020058",
-        "./image/QuanAdidas3.avif",
-        "Jordan Dri-FIT Sport",
-        "1019000",
+        "/public/image/P6.png",
+        "Nike Men's Fitness T-Shirt",
+        "919000",
         ["white", "black", "orangered", "green"],
-        ["M", "L", "XL"],
-        "901000",
+        ["S", "M", "L", "XL", "2XL"],
+        undefined,
         undefined,
         "áo"
     ),
@@ -106,17 +119,18 @@ var product = [
         "./image/AoAdidas2.avif",
         "Jordan Dri-FIT Sport",
         "1019000",
-        ["white", "black", "orangered", "green"],
+        ["orangered"],
         ["M", "L", "XL", "2XL"],
         undefined,
-        "quần"
+        undefined,
+        "áo"
     ),
     new product_Model(
         "2610200510",
         "./image/AoAdidas1.avif",
-        "Jordan Dri-FIT Sport",
+        "Jordan Dri-FIT Men Sport ",
         "2091000",
-        ["white", "black", "orangered", "green"],
+        ["blue"],
         ["M", "L", "XL"],
         "1099000",
         undefined,
@@ -124,14 +138,14 @@ var product = [
     ),
     new product_Model(
         "2610200511",
-        "./image/QuanAdidas1.avif",
-        "Jordan Dri-FIT Sport",
+        "/public/image/P7.png",
+        "Nike Life Men's Short-Sleeve Knit",
         "1019000",
         ["white", "black", "orangered", "green"],
         ["M", "L", "XL"],
         "901000",
         undefined,
-        "quần"
+        "áo"
     ),
     new product_Model(
         "2610200512",
@@ -142,7 +156,7 @@ var product = [
         ["M", "L", "XL"],
         undefined,
         undefined,
-        "quần"
+        "áo"
     ),
     new product_Model(
         "2610200513",
@@ -164,7 +178,7 @@ var product = [
         ["M", "L", "XL"],
         undefined,
         undefined,
-        "áo"
+        "quần"
     ),
     new product_Model(
         "2610200515",
@@ -186,7 +200,18 @@ var product = [
         ["M", "L", "XL"],
         "901000",
         undefined,
-        "áo"
+        "quần"
+    ),
+    new product_Model(
+        "2610200517",
+        "/public/image/S4.jpg",
+        "Nike G.T. Hustle 3 EP Electric New Collection Limited Spring",
+        "5869000",
+        ["black"],
+        ["EU 41"],
+        "5000000",
+        undefined,
+        "giày"
     ),
 ];
 

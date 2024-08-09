@@ -1,3 +1,7 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
@@ -33,7 +37,6 @@ nav > .menu > ul > a {
     color: black;
     border: 1px solid black;
     padding: 10px 25px 10px 25px;
-    border-radius: 20px;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -84,7 +87,7 @@ nav > .menu > ul > a:hover #count_Product {
 }
 
 .container > .list-product > .title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
 }
 
@@ -117,11 +120,12 @@ nav > .menu > ul > a:hover #count_Product {
 
 .container > .list-product > .product-container > .product > .top {
     display: flex;
+    gap: 10px;
 }
 
 .container > .list-product > .product-container > .product > .top > img {
+    height: 250px;
     width: 200px;
-    height: 200px;
     object-fit: cover;
     flex: 1;
 }
@@ -154,7 +158,7 @@ nav > .menu > ul > a:hover #count_Product {
     > .inf
     > .inf1
     > .productName {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 500;
 }
 
@@ -166,7 +170,7 @@ nav > .menu > ul > a:hover #count_Product {
     > .inf
     > .inf1
     > .type {
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: rgb(116, 116, 116);
     font-weight: 500;
 }
@@ -182,7 +186,7 @@ nav > .menu > ul > a:hover #count_Product {
     display: flex;
     gap: 8px;
     color: rgb(116, 116, 116);
-    font-size: 1.05rem;
+    font-size: 1.1rem;
 }
 
 .container
@@ -211,7 +215,7 @@ nav > .menu > ul > a:hover #count_Product {
     > .size
     > select {
     border: none;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     font-weight: 500;
     padding: 0 5px;
     text-decoration: underline;
@@ -279,7 +283,7 @@ nav > .menu > ul > a:hover #count_Product {
     justify-content: center;
     align-items: center;
     position: relative;
-    left: -10px;
+    left: -5px;
 }
 
 .container
@@ -304,8 +308,8 @@ nav > .menu > ul > a:hover #count_Product {
     > .control
     > button
     > img {
-    width: 23px;
-    height: 23px;
+    width: 27px;
+    height: 27px;
     margin-bottom: 2px;
 }
 
@@ -329,7 +333,7 @@ nav > .menu > ul > a:hover #count_Product {
     > .inf2
     > .sale {
     font-weight: 600;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
 }
 
 .container
@@ -340,7 +344,7 @@ nav > .menu > ul > a:hover #count_Product {
     > .inf
     > .inf2
     > .price {
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     color: gray;
     text-decoration: line-through;
 }
@@ -355,7 +359,7 @@ nav > .menu > ul > a:hover #count_Product {
 }
 
 .container > .sum-price > .sum-price-container > .title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 50px;
 }
@@ -378,7 +382,6 @@ nav > .menu > ul > a:hover #count_Product {
 .container > .sum-price > .sum-price-container > button {
     margin-top: 30px;
     height: 60px;
-    border-radius: 35px;
     border: none;
     background-color: black;
     font-size: 16px;
@@ -388,5 +391,5 @@ nav > .menu > ul > a:hover #count_Product {
 }
 
 .container > .sum-price > .sum-price-container > button:hover {
-    background-color: rgb(39, 39, 39);
+    background-color: rgb(53, 53, 53);
 }

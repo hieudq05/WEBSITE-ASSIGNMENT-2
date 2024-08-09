@@ -13,7 +13,10 @@ function parsePrice(number) {
 
 function displayCountCart() {
     let count_Product = document.querySelector("nav .menu ul a div");
-    let cartProductArr = JSON.parse(localStorage.getItem("cart"));
+    let cartProductArr =
+        JSON.parse(localStorage.getItem("cart")) === null
+            ? []
+            : JSON.parse(localStorage.getItem("cart"));
     let count = 0;
     if (cartProductArr !== null) {
         cartProductArr.forEach((cartProduct) => {
@@ -80,10 +83,10 @@ function addProductToCart() {
     });
 
     if (colorIsChoosed === false) {
-        color[0].parentNode.parentNode.previousSibling.style.color = "red";
+        color[0].parentNode.parentNode.style.outline = "2px solid black";
     }
     if (sizeIsChoosed === false) {
-        size[0].parentNode.previousSibling.style.color = "red";
+        size[0].parentNode.style.outline = "2px solid black";
     }
     if (colorIsChoosed === true && sizeIsChoosed === true) {
         let cartProductAdded = new product_Model();

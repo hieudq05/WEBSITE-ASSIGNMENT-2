@@ -3,7 +3,9 @@ html {
 }
 
 body {
-    font-family: sans-serif;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
     margin: 0;
 }
 
@@ -13,6 +15,7 @@ nav {
     align-items: center;
     padding: 40px 100px 20px 100px;
     border-radius: 40px;
+    flex-wrap: wrap;
 }
 
 nav > .logo > a {
@@ -28,6 +31,7 @@ nav > .menu > ul {
     list-style: none;
     gap: 40px;
     font-weight: 600;
+    flex-wrap: wrap;
 }
 
 nav > .menu > ul > a {
@@ -35,11 +39,51 @@ nav > .menu > ul > a {
     color: black;
     border: 1px solid black;
     padding: 10px 25px 10px 25px;
-    border-radius: 20px;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 10px;
+}
+
+nav > .menu > ul > div {
+    padding: 0;
+    text-decoration: none;
+    color: var(--color-white);
+    border: 1px solid var(--color-primary);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav > .menu > ul > div > img {
+    position: relative;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+nav > .menu > ul > div > input {
+    width: 0px;
+    background-color: white;
+    border: none;
+    z-index: 100;
+    height: 45px;
+    font-size: 1.05rem;
+    outline: none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+        sans-serif;
+    font-weight: 500;
+    padding: 0;
+    transition: all 0.4s ease;
+    z-index: 1000;
+}
+
+nav > .menu > ul > div:hover {
+    transform: scale(1.05);
+    background-color: var(--color-primary);
+    color: var(--color-primary);
+    border-color: none;
 }
 
 nav > .menu > ul > a:hover {
@@ -68,7 +112,6 @@ nav > .menu > ul > a:hover #count_Product {
 
 .container {
     width: 80vw;
-    height: 80vh;
     margin: 0 auto;
     box-sizing: border-box;
     padding-top: 50px;
@@ -102,6 +145,7 @@ nav > .menu > ul > a:hover #count_Product {
     font-size: 25px;
     font-weight: 600;
     padding-bottom: 45px;
+    font-size: 2rem;
 }
 
 .container > .list-container {
@@ -143,12 +187,12 @@ nav > .menu > ul > a:hover #count_Product {
     box-sizing: border-box;
     border: 1px solid rgb(206, 206, 206);
     background-color: transparent;
-    border-radius: 20px;
+    border-radius: 15px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
 }
 
 .container > .list-container > .filter > .list-option > hr {
@@ -161,7 +205,7 @@ nav > .menu > ul > a:hover #count_Product {
 .container > .list-container > .filter > .list-option > button > img {
     width: 20px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 
 .container > .list-container > .list-product {
@@ -254,14 +298,13 @@ nav > .menu > ul > a:hover #count_Product {
     > .container-price
     > .sale {
     font-weight: 600;
-    color: rgb(33, 80, 138);
     font-size: 16px;
     margin: 5px 0px 8px 0px;
     font-family: montserrat;
 }
 
 .list-product > .container-product > .product > .inf > .name {
-    font-size: 15px;
+    font-size: 1.05rem;
     font-weight: 600;
 }
 
@@ -302,18 +345,28 @@ nav > .menu > ul > a:hover #count_Product {
 
 .list-product > .container-product > .product > .inf > .size {
     display: flex;
-    gap: 13px;
+    gap: 19px;
     position: relative;
     left: -6px;
+    overflow: hidden;
+}
+
+.list-product > .container-product > .product > .inf > .size::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 1.5rem;
+    width: 40%;
+    background: linear-gradient(to right, transparent, white);
 }
 
 .list-product > .container-product > .product > .inf > .size > div {
-    width: 25px;
-    padding: 0px 3px 0px 3px;
-    border: 1px solid var(--color-white);
+    padding: 0 0 0 8px;
     display: flex;
     justify-content: center;
     align-items: center;
+    white-space: nowrap;
 }
 
 .list-product > .container-product > .product > .inf > button {
@@ -334,4 +387,138 @@ nav > .menu > ul > a:hover #count_Product {
     pointer-events: none;
     z-index: 1;
     filter: blur(5px);
+}
+
+footer {
+    background: url(/public/image/Balloon\ Experience.jpg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-white);
+    border-radius: 0 0 40px 40px;
+    margin: 170px 20px 20px 20px;
+}
+
+footer > .container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+}
+
+footer > .container > .top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 100px;
+}
+
+footer > .container > .bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+footer > .container > .top > .right {
+    width: 600px;
+    flex: 2;
+    height: 100%;
+    padding: 50px 0px 0px 0px;
+}
+
+footer > .container > .top > .left {
+    width: 600px;
+    flex: 1;
+    height: 100%;
+    padding: 50px 0px 0px 0px;
+}
+
+footer > .container > .top > .left > .contact-us > .title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+footer > .container > .top > .left > .contact-us > .email {
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 40px;
+    border: 1px solid var(--color-white);
+    padding: 10px 20px 10px 20px;
+    border-radius: 20px;
+    font-family: montserrat;
+    letter-spacing: 1px;
+}
+
+footer > .container > .top > .left > .contact-us > .email > a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+footer > .container > .top > .left > .contact-us > .email > a:hover {
+    text-decoration: underline;
+}
+
+footer > .container > .top > .left > .call-us > .title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+footer > .container > .top > .left > .call-us > .number {
+    font-size: 20px;
+    font-weight: 700;
+    border: 1px solid var(--color-white);
+    padding: 10px 0px 10px 30px;
+    border-radius: 20px;
+    font-family: montserrat;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer > .container > .top > .left > .call-us > .number > a {
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+footer > .container > .top > .left > .call-us > .number > a:hover {
+    text-decoration: underline;
+}
+
+footer > .container > .top > .right > .follow-me > .title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+footer > .container > .top > .right > .follow-me > .logo {
+    display: flex;
+    gap: 50px;
+    border: 1px solid var(--color-white);
+    border-radius: 20px;
+    padding: 7px 30px 7px 30px;
+}
+
+footer > .container > .top > .right > .follow-me > .logo > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer > .container > .top > .right > .follow-me > .logo > a > img {
+    width: 30px;
+}
+
+footer > .container > .bottom > .logo {
+    font-size: 32px;
+    font-weight: 700;
+    width: 600px;
+    padding: 0px 0px 50px 0px;
+    flex: 1;
+}
+
+footer > .container > .bottom > .shop {
+    width: 600px;
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    flex: 2;
 }

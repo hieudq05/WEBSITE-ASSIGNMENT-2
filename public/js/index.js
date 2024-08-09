@@ -1,3 +1,44 @@
+function setName() {
+    const userLoggedIn =
+        JSON.parse(localStorage.getItem("accountLoggedIn")) == null
+            ? "Đăng nhập"
+            : JSON.parse(localStorage.getItem("accountLoggedIn"));
+    var loginName = document.querySelector("nav > .menu > ul > a:nth-child(3)")
+        .childNodes[0];
+    switch (userLoggedIn) {
+        case "Đăng nhập":
+            loginName.innerHTML = userLoggedIn;
+            loginName.parentNode.setAttribute("href", "/public/login.html");
+            break;
+
+        default:
+            loginName.innerHTML = userLoggedIn.fullname;
+            let popupLogOut = document.createElement("a");
+            popupLogOut.innerHTML = "Đăng xuất";
+            popupLogOut.style.display = "none";
+            popupLogOut.style.color = "black";
+            loginName.parentNode.addEventListener("mouseover", () => {
+                popupLogOut.style.display = "flex";
+            });
+            loginName.parentNode.addEventListener("mouseout", () => {
+                popupLogOut.style.display = "none";
+            });
+            popupLogOut.addEventListener("mouseover", () => {
+                popupLogOut.style.display = "flex";
+            });
+            popupLogOut.addEventListener("mouseout", () => {
+                popupLogOut.style.display = "none";
+            });
+            popupLogOut.setAttribute("href", "#");
+            loginName.parentNode.appendChild(popupLogOut);
+            loginName.parentNode.addEventListener("click", () => {
+                localStorage.removeItem("accountLoggedIn");
+                location.reload();
+            });
+            break;
+    }
+}
+
 //Hiển thị sản phẩm nổi bật
 var container_Product_Array =
     document.getElementsByClassName("products-container");
@@ -22,8 +63,7 @@ btnExplore.forEach((element) => {
     icon.style.height = "2cap";
     icon.style.opacity = "0";
     icon.style.transition =
-        "opacity 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
-    icon.style.transitionDelay = "0.2s";
+        "opacity 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55)";
     element.appendChild(icon);
     element.style.display = "flex";
     element.style.alignItems = "center";
@@ -46,7 +86,6 @@ for (let indexBEP = 0; indexBEP < product_popular.length; indexBEP++) {
             product_popular.concat(product_sale),
             "products-container"
         );
-        addProductToCart();
     });
     btnExplore[indexBEP].parentNode.parentNode.childNodes[0].addEventListener(
         "click",
@@ -56,7 +95,6 @@ for (let indexBEP = 0; indexBEP < product_popular.length; indexBEP++) {
                 product_popular.concat(product_sale),
                 "products-container"
             );
-            addProductToCart();
         }
     );
 }
@@ -67,8 +105,7 @@ for (
     indexBES++
 ) {
     btnExplore[indexBES].addEventListener("click", () => {
-        getMoreInf(btnExplore[indexBES], product_popular, "products-container");
-        addProductToCart();
+        getMoreInf(btnExplore[indexBES], product_sale, "products-container");
     });
     btnExplore[indexBES].parentNode.parentNode.childNodes[0].addEventListener(
         "click",
@@ -78,7 +115,6 @@ for (
                 product_sale,
                 "products-container"
             );
-            addProductToCart();
         }
     );
 }
@@ -105,3 +141,34 @@ btnUp.addEventListener("click", () => {
 });
 
 displayCountCart();
+setName();
+
+var divSearch = document.querySelector("nav > .menu > ul > div");
+var btnSearch = document.querySelector("nav > .menu > ul > div > img");
+var inputSearch = document.querySelector("nav > .menu > ul > div > input");
+let countClickSearchBtn = 0;
+divSearch.addEventListener("mouseover", () => {
+    divSearch.childNodes[1].setAttribute(
+        "src",
+        "/public/image/Search_black.png"
+    );
+});
+divSearch.addEventListener("mouseout", () => {
+    divSearch.childNodes[1].setAttribute(
+        "src",
+        "/public/image/Search_white.png"
+    );
+});
+btnSearch.addEventListener("click", () => {
+    inputSearch.focus();
+    inputSearch.style.width = "350px";
+    inputSearch.style.padding = "0 0 0 10px";
+});
+inputSearch.addEventListener("keydown", (event) => {
+    if (
+        (event.key === "Enter" || event.keyCode === 13) &&
+        inputSearch.value !== ""
+    ) {
+        location.href = `/public/allProduct.html?inputSearch=${inputSearch.value}`;
+    }
+});

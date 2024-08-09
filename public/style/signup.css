@@ -35,14 +35,15 @@ form > .form_login > .notice {
     width: 100%;
     background-color: var(--color-success);
     display: flex;
+    justify-content: center;
+    align-items: center;
     align-items: center;
     box-sizing: border-box;
-    padding-left: 25px;
     color: white;
     font-weight: 600;
-    margin-top: 10px;
     border-radius: 7px;
     display: none;
+    transition: display 0.3s ease;
 }
 
 form > .form_login > #label_email {
@@ -58,6 +59,18 @@ form > .form_login > #label_email {
     font-size: 16px;
 }
 
+form > .form_login > #label_name {
+    position: relative;
+    top: 45px;
+    left: 20px;
+    background-color: white;
+    width: 80px;
+    padding: 0 0 0 5px;
+    color: gray;
+    transition: all 0.3s ease;
+    cursor: text;
+}
+
 form > .form_login > .password_area {
     display: flex;
     justify-content: flex-start;
@@ -65,6 +78,7 @@ form > .form_login > .password_area {
 }
 
 form > .form_login > input[type="email"],
+form > .form_login > input[type="text"],
 form > .form_login > .password_area > input[type="password"],
 form > .form_login > .password_area > input[type="text"] {
     height: 50px;

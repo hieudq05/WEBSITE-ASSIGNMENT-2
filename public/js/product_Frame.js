@@ -1,23 +1,29 @@
 function chooseSize(btnSize) {
     btnSize.parentNode.childNodes.forEach((element) => {
-        if (
+        if (btnSize.parentNode.childNodes.length === 1) {
+            element.classList.toggle("button-size-active");
+            element.parentNode.style.outline = "none";
+        } else if (
             element.classList.toggle("button-size-active") === true &&
             element != btnSize
         ) {
             element.classList.toggle("button-size-active");
-            element.parentNode.previousSibling.style.color = "black";
+            element.parentNode.style.outline = "none";
         }
     });
 }
 
 function chooseColor(btnColor) {
     btnColor.parentNode.parentNode.childNodes.forEach((element) => {
-        if (
+        if (btnColor.parentNode.parentNode.childNodes.length === 1) {
+            element.classList.toggle("button-color-active");
+            element.parentNode.style.outline = "none";
+        } else if (
             element.classList.toggle("button-color-active") === true &&
             element != btnColor.parentNode
         ) {
             element.classList.toggle("button-color-active");
-            element.parentNode.previousSibling.style.color = "black";
+            element.parentNode.style.outline = "none";
         }
     });
 }
@@ -166,7 +172,6 @@ var getMoreInf = (productElement, productArray, containerName) => {
                     let price = document.createElement("div");
                     price.classList.add("price");
                     price.style.border = "none";
-                    price.style.borderRadius = "8px";
                     price.style.marginTop = "35px";
                     price.style.backgroundColor = "rgb(247, 247, 247)";
                     productInf.appendChild(price);

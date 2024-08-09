@@ -1,5 +1,5 @@
 const txt = document.querySelectorAll(
-    "input[type='email'], input[type='password']"
+    "input[type='email'], input[type='password'], input[type='text']"
 );
 const lbl = document.querySelectorAll("label");
 for (let index_input = 0; index_input < txt.length; index_input++) {
@@ -33,10 +33,10 @@ for (
     showPassword[index_show_hide].addEventListener("click", () => {
         if (showPassword[index_show_hide].getAttribute("src") === imgShow) {
             showPassword[index_show_hide].setAttribute("src", imgHide);
-            txt[index_show_hide + 1].type = "text";
+            txt[index_show_hide + 2].type = "text";
         } else {
             showPassword[index_show_hide].setAttribute("src", imgShow);
-            txt[index_show_hide + 1].type = "password";
+            txt[index_show_hide + 2].type = "password";
         }
     });
 }
@@ -92,7 +92,9 @@ btnSignup.addEventListener("submit", function (event) {
     event.preventDefault();
     if (
         statusReEnterPassword.innerHTML === "" ||
-        statusReEnterPassword.innerHTML === "Đã tồn tại tài khoản!"
+        statusReEnterPassword.innerHTML === "Đã tồn tại tài khoản!" ||
+        statusReEnterPassword.innerHTML ===
+            "Đã tồn tại tài khoản sử dụng Email trên!"
     ) {
         let userName = document.querySelector(
             "form > .form_login > input[type='email']"
@@ -105,6 +107,9 @@ btnSignup.addEventListener("submit", function (event) {
                 "form > .form_login > .password_area > input[type='text']"
             );
         }
+        let fullName = document.querySelector(
+            "form> .form_login > input[type='text']"
+        );
         let accountArr =
             JSON.parse(localStorage.getItem("account")) === null
                 ? []
@@ -115,18 +120,28 @@ btnSignup.addEventListener("submit", function (event) {
                 checkAcc = false;
             }
         });
+
         if (checkAcc === true) {
             statusReEnterPassword.style.margin = "0";
             statusReEnterPassword.innerHTML = "";
             let account = {
+                fullname: fullName.value,
                 username: userName.value,
                 pass: password.value,
             };
             accountArr.push(account);
             localStorage.setItem("account", JSON.stringify(accountArr));
-            location.href = "/public/index.html";
+            localStorage.setItem("accountLoggedIn", JSON.stringify(account));
+            document.querySelector(
+                "form > .form_login > .notice"
+            ).style.display = "flex";
+            setInterval(() => {
+                clearInterval(this);
+                location.href = "/public/index.html";
+            }, 1000);
         } else {
-            statusReEnterPassword.innerHTML = "Đã tồn tại tài khoản!";
+            statusReEnterPassword.innerHTML =
+                "Đã tồn tại tài khoản sử dụng Email trên!";
             statusReEnterPassword.style.color = "red";
             statusReEnterPassword.style.margin = "15px 0 0 0";
         }

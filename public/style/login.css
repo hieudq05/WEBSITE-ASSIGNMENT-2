@@ -1,3 +1,7 @@
+:root {
+    --color-success: rgb(18, 196, 18);
+}
+
 body {
     margin: 0;
     height: 100vh;
@@ -24,6 +28,23 @@ form > .form_login {
     width: 70%;
     margin: auto;
     margin-top: 10px;
+}
+
+form > .form_login > .notice {
+    height: 50px;
+    width: 100%;
+    background-color: var(--color-success);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    box-sizing: border-box;
+    color: white;
+    font-weight: 600;
+    border-radius: 7px;
+    padding: 0px 30px;
+    display: none;
+    transition: display 0.3s ease;
 }
 
 form > .form_login > .password_area {
@@ -91,6 +112,11 @@ form > .form_login > #label_password {
     color: gray;
     transition: all 0.3s ease;
     cursor: text;
+}
+
+form > .form_login > .noticePassword {
+    transition: all 0.3s ease;
+    color: red;
 }
 
 form > .form_login > p > #signup {

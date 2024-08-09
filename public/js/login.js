@@ -61,14 +61,33 @@ for (
 
 btnSubmit.addEventListener("submit", function (event) {
     event.preventDefault();
-    console.log(document.getElementsByClassName("noticePassword")[0]);
-    let accountArr = JSON.parse(localStorage.getItem("account"));
+    let check = false;
+    let notice = document.getElementsByClassName("noticePassword")[0];
+    let accountArr =
+        JSON.parse(localStorage.getItem("account")) === null
+            ? []
+            : JSON.parse(localStorage.getItem("account"));
     accountArr.forEach((element) => {
         if (
             element.username === txtEmail.value &&
             element.pass === txtPassword.value
         ) {
-            location.href = "/public/index.html";
+            check = true;
+            localStorage.setItem("accountLoggedIn", JSON.stringify(element));
+            document.querySelector(
+                "form > .form_login > .notice"
+            ).style.display = "flex";
+            notice.style.margin = "0";
+            notice.innerHTML = "";
+            setInterval(() => {
+                clearInterval(this);
+                location.href = "/public/index.html";
+            }, 1000);
         }
     });
+    if (check === false) {
+        notice.innerHTML = "Tài khoản hoặc mật khẩu không đúng!";
+        notice.style.color = "red";
+        notice.style.margin = "15px 0 0 0";
+    }
 });
