@@ -81,6 +81,9 @@ function addProductToCart() {
             colorIsChoosed = true;
         }
     });
+    let btnAddCart = document.querySelector(
+        ".product-frame > .product-inf > .add > button:nth-child(1)"
+    );
 
     if (colorIsChoosed === false) {
         color[0].parentNode.parentNode.style.outline = "2px solid black";
@@ -107,13 +110,29 @@ function addProductToCart() {
         cartProductAdded.sale = sale;
         cartProductAdded.srcImg = srcImg;
         cartProductAdded.type = undefined;
-        let cartProductArr =
-            JSON.parse(localStorage.getItem("cart")) === null
-                ? []
-                : JSON.parse(localStorage.getItem("cart"));
-        cartProductArr.push(cartProductAdded);
-        cartProductArr.sort((a, b) => a.id - b.id);
-        localStorage.setItem("cart", JSON.stringify(cartProductArr));
-        displayCountCart();
+        btnAddCart.disabled = true;
+        btnAddCart.style.cursor = "not-allowed";
+        btnAddCart.childNodes[0].style.top = "-50px";
+        btnAddCart.childNodes[1].style.top = "-5px";
+        let delay = setInterval(() => {
+            let cartProductArr =
+                JSON.parse(localStorage.getItem("cart")) === null
+                    ? []
+                    : JSON.parse(localStorage.getItem("cart"));
+            cartProductArr.push(cartProductAdded);
+            cartProductArr.sort((a, b) => a.id - b.id);
+            localStorage.setItem("cart", JSON.stringify(cartProductArr));
+            btnAddCart.childNodes[1].style.top = "50px";
+            btnAddCart.childNodes[2].style.opacity = "1";
+            let delayReturnBtnDefault = setInterval(() => {
+                btnAddCart.childNodes[2].style.opacity = "0";
+                btnAddCart.childNodes[0].style.top = "15px";
+                btnAddCart.disabled = false;
+                btnAddCart.style.cursor = "pointer";
+                clearInterval(delayReturnBtnDefault);
+            }, 1000);
+            displayCountCart();
+            clearInterval(delay);
+        }, 2000);
     }
 }

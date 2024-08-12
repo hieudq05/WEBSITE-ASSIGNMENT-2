@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Setting</title>
+        <link rel="icon" href="/public/image/logo.png" type="image/png" />
+        <link rel="stylesheet" href="./style/setting.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+        />
+    </head>
+    <body>
+        <div class="container-time-flash-sale">
+            <div class="title">Flash sale</div>
+            <div class="time-now">
+                <div>Thời gian hiện tại:</div>
+                <div id="time">20:45 T7, 10/08/2024</div>
+            </div>
+            <form action="">
+                <label for="dayStart">Ngày bắt đầu</label>
+                <div>
+                    <input
+                        type="text"
+                        name=""
+                        id="dayStart"
+                        placeholder="11/08/2024"
+                    />
+                    <div>
+                        <button id="datePickerStart">
+                            <img src="/public/image/calendar.png" alt="" />
+                        </button>
+                    </div>
+                </div>
+
+                <label for="dayEnd">Ngày kết thúc</label>
+                <div>
+                    <input
+                        type="text"
+                        name=""
+                        id="dayEnd"
+                        placeholder="11/08/2024"
+                    />
+                    <div>
+                        <button id="datePickerEnd">
+                            <img src="/public/image/calendar.png" alt="" />
+                        </button>
+                    </div>
+                </div>
+                <input type="button" value="Tiếp tục" />
+            </form>
+        </div>
+        <div class="container-discount-code">
+            <div class="title">Discount</div>
+        </div>
+    </body>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="./js/setting.js"></script>
+</html>

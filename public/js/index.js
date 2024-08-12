@@ -46,11 +46,14 @@ let product_popular = product.slice(0, 4);
 displayProduct(product_popular, container_Product_Array[0]);
 //Hiển thị sản phẩm giảm giá
 let product_sale = [];
-product.forEach((element) => {
-    if (element.sale !== undefined) {
-        product_sale.push(element);
+for (let indexProduct = 0; indexProduct < product.length; indexProduct++) {
+    if (product[indexProduct].sale !== undefined) {
+        product_sale.push(product[indexProduct]);
     }
-});
+    if (product_sale.length >= 4) {
+        break;
+    }
+}
 displayProduct(product_sale, container_Product_Array[1]);
 
 //Thêm hiệu ứng cho nút explore của sản phẩm

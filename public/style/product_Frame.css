@@ -305,6 +305,26 @@
     color: white;
 }
 
+.product-frame > .product-inf > .add > button:nth-child(1) > div:nth-child(1) {
+    position: relative;
+    top: 15px;
+    transition: all 0.3s ease;
+}
+
+.product-frame > .product-inf > .add > button:nth-child(1) > div:nth-child(2) {
+    position: relative;
+    top: 50px;
+    transition: all 0.5s ease;
+}
+
+.product-frame > .product-inf > .add > button:nth-child(1) > div:nth-child(3) {
+    position: relative;
+    top: -25px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: white;
+    opacity: 0;
+}
+
 .product-frame > .product-inf > .add > button:nth-child(2) {
     height: 50px;
     padding: 0 20px;

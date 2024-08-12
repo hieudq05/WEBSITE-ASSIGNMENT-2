@@ -351,6 +351,7 @@ btnDeleteProduct.forEach((btnDelete) => {
         displayCountCart();
         displaySumPrice();
         displayStatusCart();
+        console.log(JSON.parse(localStorage.getItem("cart")).length);
     });
 });
 optionSize.forEach((option) => {
@@ -365,7 +366,7 @@ const btnCheckOut = document.querySelector(
     ".container > .sum-price > .sum-price-container > button"
 );
 btnCheckOut.addEventListener("click", () => {
-    if (cartProductArr.length !== 0) {
+    if (JSON.parse(localStorage.getItem("cart")).length > 0) {
         if (localStorage.getItem("accountLoggedIn")) {
             alert("Thanh toán thành công");
             localStorage.removeItem("cart");

@@ -251,9 +251,17 @@ var getMoreInf = (productElement, productArray, containerName) => {
                 control.classList.add("add");
                 productInf.appendChild(control);
                 let btnAddCart = document.createElement("button");
-                btnAddCart.innerHTML = "Thêm vào giỏ hàng";
                 btnAddCart.setAttribute("onclick", "addProductToCart()");
                 control.appendChild(btnAddCart);
+                let content1BtnAddCart = document.createElement("div");
+                content1BtnAddCart.innerHTML = "Thêm vào giỏ hàng";
+                btnAddCart.appendChild(content1BtnAddCart);
+                let content2BtnAddCart = document.createElement("div");
+                content2BtnAddCart.innerHTML = "Đang thêm...";
+                btnAddCart.appendChild(content2BtnAddCart);
+                let content3BtnAddCart = document.createElement("div");
+                content3BtnAddCart.innerHTML = "Đã thêm!";
+                btnAddCart.appendChild(content3BtnAddCart);
                 let cart = document.createElement("button");
                 let cart_Icon = document.createElement("img");
                 cart_Icon.src = "./image/cartIcon.png";

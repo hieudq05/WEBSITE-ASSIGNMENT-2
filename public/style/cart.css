@@ -124,8 +124,8 @@ nav > .menu > ul > a:hover #count_Product {
 }
 
 .container > .list-product > .product-container > .product > .top > img {
-    height: 250px;
-    width: 200px;
+    height: 200px;
+    width: 150px;
     object-fit: cover;
     flex: 1;
 }
